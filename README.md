@@ -142,3 +142,4 @@ The built files can be deployed to any static hosting service like:
 ## License
 
 © 2024 Glassbox. All rights reserved.# gb-web
+# gb-web
