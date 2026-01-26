@@ -1,0 +1,94 @@
+{
+  "navigation": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "services": "Layanan",
+    "gallery": "Galeri",
+    "contact": "Kontak",
+    "menu": "Menu"
+  },
+  "services": {
+    "mediaPlacement": "Penempatan Media",
+    "mediaPlacementDescription": "Penempatan strategis iklan Anda di lokasi-lokasi dengan lalu lintas tinggi",
+    "oohTransit": "Media Transit OOH",
+    "oohTransitDescription": "Periklanan transit out-of-home untuk visibilitas dan jangkauan maksimal",
+    "offlineEvent": "Aktivasi Acara Offline",
+    "offlineEventDescription": "Aktivasi acara offline dan solusi pemasaran pengalaman",
+    "description": "Kami menyediakan solusi periklanan komprehensif untuk membantu merek Anda menjangkau audiens yang tepat"
+  },
+  "hero": {
+    "tagline": "Berpikir Maju, Bertindak Berani",
+    "title": "Revolusikan Merek Anda dengan Solusi Periklanan Avant-garde Glassbox",
+    "subtitle": "Tangkap Audiens Anda Di Mana Saja Mereka Berada — Dari Ritel, Transportasi Umum, dan Perhotelan, Glassbox Menyampaikan Periklanan yang Berdampak"
+  },
+  "audience": {
+    "title": "Menghubungkan Merek Anda ke Audiens yang Tepat",
+    "description": "Kami membantu merek terhubung dengan audiens mereka melalui strategi periklanan komprehensif yang didukung oleh teknologi canggih. Dengan penempatan di lokasi strategis seperti:",
+    "locations": {
+      "hotel": "Hotel",
+      "transjakarta": "Transjakarta",
+      "universities": "Universitas",
+      "mall": "Mall",
+      "lounges": "Lounge",
+      "retail": "Ritel"
+    }
+  },
+  "features": {
+    "technology": "Teknologi Canggih",
+    "management": "Manajemen Real-Time",
+    "locations": "Lokasi Berdampak Tinggi"
+  },
+  "platforms": {
+    "title": "Periklanan Inovatif di Multi-Platform",
+    "digitalSignage": {
+      "title": "Digital Signage",
+      "description": "Ideal untuk area lalu lintas tinggi, menawarkan merek cara yang kuat untuk menampilkan pesan mereka dengan visual yang hidup dan pembaruan real-time.",
+      "cta": "Lihat Solusi"
+    },
+    "smartTV": {
+      "title": "Smart TV",
+      "description": "Menyediakan platform ganda di mana iklan dapat terintegrasi dengan mulus ke dalam pengalaman menonton, memastikan visibilitas tinggi tanpa mengganggu audiens.",
+      "cta": "Lihat Solusi"
+    },
+    "tablets": {
+      "title": "Tablet",
+      "description": "Memfasilitasi keterlibatan personal, memungkinkan merek menciptakan pengalaman yang disesuaikan yang mendorong interaksi langsung dan koneksi yang lebih dalam dengan pelanggan.",
+      "cta": "Lihat Solusi"
+    }
+  },
+  "results": {
+    "title": "Lihat Bagaimana Kami Menghasilkan Hasil",
+    "description": "Dari konsep hingga eksekusi, proyek kami dibuat dengan presisi, inovasi, dan pemahaman mendalam tentang audiens Anda",
+    "cta": "Pelajari Lebih Lanjut"
+  },
+  "partners": {
+    "title": "Di Mana Kolaborasi Bertemu Inovasi",
+    "description": "Mitra kami mempercayai kami untuk memberikan solusi periklanan inovatif yang menghasilkan hasil nyata"
+  },
+  "cta": {
+    "title": "Tingkatkan Keunggulan Brand Anda",
+    "button": "Mulai Kampanye Sekarang"
+  },
+  "testimonials": {
+    "andriani": {
+      "quote": "Dengan Glassbox, semua materi promosi terlihat sangat estetis dan menarik bagi semua tamu, menghidupkan suasana hotel.",
+      "author": "Ibu Andriani",
+      "position": "Direktur Penjualan & Pemasaran, Swiss-Belhotel Bogor"
+    },
+    "selo": {
+      "quote": "Glassbox telah membawa tingkat inovasi baru ke kampus kami. Tampilan digital mereka tidak hanya menghasilkan pendapatan tambahan tetapi juga memberikan ruang kami tampilan futuristik yang selaras dengan lingkungan berpikir maju dari fakultas kami. Tim mereka sangat profesional dan dapat diandalkan sepanjang kemitraan. Pengalaman yang fantastis!",
+      "author": "Bapak Selo Sukardi",
+      "position": "Staf Kerjasama, Usaha, dan Hubungan Alumni, Fakultas Matematika dan Ilmu Pengetahuan Alam, Universitas Indonesia"
+    },
+    "amy": {
+      "quote": "Berkemitraan dengan Glassbox telah sangat meningkatkan visibilitas 3S, memudahkan klien dan kandidat untuk menemukan kami. Paparan di lokasi premium telah meningkatkan keterlibatan kami, dan dukungan profesional mereka membuat proses berjalan lancar. Sangat direkomendasikan!",
+      "author": "Amy Damayanti",
+      "position": "Manajer Operasi PT Sigma Solusi Servis"
+    }
+  },
+  "footer": {
+    "tagline": "Mitra Anda untuk Solusi Periklanan Modern dan Bertarget.",
+    "privacy": "Kebijakan Privasi & Syarat & Ketentuan",
+    "copyright": "© 2024 glassbox"
+  }
+}

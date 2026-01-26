@@ -1,0 +1,94 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "menu": "Menu"
+  },
+  "services": {
+    "mediaPlacement": "Media Placement",
+    "mediaPlacementDescription": "Strategic placement of your advertisements across high-traffic locations",
+    "oohTransit": "OOH Transit Media",
+    "oohTransitDescription": "Out-of-home transit advertising for maximum visibility and reach",
+    "offlineEvent": "Offline Event Activation",
+    "offlineEventDescription": "Offline event activation and experiential marketing solutions",
+    "description": "We provide comprehensive advertising solutions to help your brand reach the right audience"
+  },
+  "hero": {
+    "tagline": "Think Ahead, Act Bold",
+    "title": "Revolutionize Your Brands with Glassbox avant-garde Advertising Solution",
+    "subtitle": "Capture Your Audience Everywhere They Go — From Retail, Public Transport, and Hospitality, Glassbox Delivers Impactful Advertising"
+  },
+  "audience": {
+    "title": "Connecting Your Brand to the Right Audience",
+    "description": "We help brands connect with their audiences through comprehensive advertising strategies backed by cutting-edge technology. With placements in strategic locations such as:",
+    "locations": {
+      "hotel": "Hotel",
+      "transjakarta": "Transjakarta",
+      "universities": "Universities",
+      "mall": "Mall",
+      "lounges": "Lounges",
+      "retail": "Retail"
+    }
+  },
+  "features": {
+    "technology": "Advanced Technology",
+    "management": "Real-Time Management",
+    "locations": "High Impact Locations"
+  },
+  "platforms": {
+    "title": "Innovative Advertising Across Multi-Platforms",
+    "digitalSignage": {
+      "title": "Digital Signage",
+      "description": "Ideal for high-traffic areas, offering brands a powerful way to showcase their message with vivid visuals and real-time updates.",
+      "cta": "Explore Solutions"
+    },
+    "smartTV": {
+      "title": "Smart TV",
+      "description": "Provides a dual-purpose platform where ads can be seamlessly integrated into the viewing experience, ensuring high visibility without disrupting the audience.",
+      "cta": "Explore Solutions"
+    },
+    "tablets": {
+      "title": "Tablets",
+      "description": "Facilitates personal engagement, allowing brands to create tailored experiences that encourage direct interaction and deeper connection with customers.",
+      "cta": "Explore Solutions"
+    }
+  },
+  "results": {
+    "title": "See How We Deliver Results",
+    "description": "From concept to execution, our projects are crafted with precision, innovation, and a deep understanding of your audience",
+    "cta": "Learn More"
+  },
+  "partners": {
+    "title": "Where Collaboration Meets Innovation",
+    "description": "Our partners trust us to deliver innovative advertising solutions that drive real results"
+  },
+  "cta": {
+    "title": "Elevate Your Brand Above the Noise",
+    "button": "Launch Your Campaign"
+  },
+  "testimonials": {
+    "andriani": {
+      "quote": "With Glassbox, all promotional materials look very aesthetic and appealing to all guests, bringing the hotel's atmosphere to life.",
+      "author": "Mrs. Andriani",
+      "position": "Director of Sales & Marketing, Swiss-Belhotel Bogor"
+    },
+    "selo": {
+      "quote": "Glassbox has brought a new level of innovation to our campus. Their digital displays not only generate additional revenue but also give our space a futuristic look that aligns with the forward-thinking environment of our faculty. Their team has been incredibly professional and reliable throughout the partnership. A fantastic experience!",
+      "author": "Mr. Selo Sukardi",
+      "position": "Staff of Cooperation, Ventures, and Alumni Relations, Faculty of Mathematics and Natural Sciences, Universitas Indonesia"
+    },
+    "amy": {
+      "quote": "Partnering with Glassbox has greatly increased 3S's visibility, making it easier for clients and candidates to find us. The exposure in premium locations has boosted our engagement, and their professional support made the process seamless. Highly recommended!",
+      "author": "Amy Damayanti",
+      "position": "Operation Manager PT Sigma Solusi Servis"
+    }
+  },
+  "footer": {
+    "tagline": "Your Partner for Modern, Targeted Advertising Solutions.",
+    "privacy": "Privacy Policy & TNC",
+    "copyright": "© 2024 glassbox"
+  }
+}
