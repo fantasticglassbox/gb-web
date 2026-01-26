@@ -2,14 +2,10 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 const Services: React.FC = () => {
   const { t } = useTranslation();
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const services = [
     {

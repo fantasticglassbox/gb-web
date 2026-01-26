@@ -1,14 +1,7 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
 
 const Partners: React.FC = () => {
-  const { t } = useTranslation();
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   const partners = [
     { id: 1, name: 'Partner 1', logo: '/images/client-1.png' },
     { id: 2, name: 'Partner 2', logo: '/images/client-2.png' },

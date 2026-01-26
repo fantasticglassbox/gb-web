@@ -9,7 +9,6 @@ const Hero: React.FC = () => {
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 500], [0, 100]);
   const opacity = useTransform(scrollY, [0, 300], [1, 1]); // Stay at 1 opacity longer
-  const scale = useTransform(scrollY, [0, 500], [1, 0.95]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {

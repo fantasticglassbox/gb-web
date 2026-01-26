@@ -2,9 +2,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { 
-  FaFacebookF, 
-  FaTwitter, 
-  FaLinkedinIn, 
   FaInstagram, 
   FaYoutube,
   FaTiktok
@@ -15,8 +12,8 @@ const Footer: React.FC = () => {
 
   const socialLinks = [
     { name: 'Instagram', icon: FaInstagram, href: 'http://instagram.com/glassboxid', color: 'hover:bg-gradient-to-r hover:from-purple-600 hover:via-pink-600 hover:to-orange-500' },
-    { name: 'TikTok', icon: FaTiktok, href: '#', color: 'hover:bg-black' },
-    { name: 'YouTube', icon: FaYoutube, href: '#', color: 'hover:bg-red-600' },
+    { name: 'TikTok', icon: FaTiktok, href: 'https://tiktok.com', color: 'hover:bg-black' },
+    { name: 'YouTube', icon: FaYoutube, href: 'https://youtube.com', color: 'hover:bg-red-600' },
   ];
 
   return (
@@ -114,7 +111,7 @@ const Footer: React.FC = () => {
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase">
           <p>{t('footer.copyright')}</p>
           <div className="flex space-x-8">
-            <a href="#" className="hover:text-white transition-colors">{t('footer.privacy')}</a>
+            <button className="hover:text-white transition-colors">{t('footer.privacy')}</button>
             <span className="text-white/10 hidden md:inline">|</span>
             <p className="text-white/30">Crafted for Impact</p>
           </div>
