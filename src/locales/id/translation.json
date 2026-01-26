@@ -14,12 +14,20 @@
     "oohTransitDescription": "Periklanan transit out-of-home untuk visibilitas dan jangkauan maksimal",
     "offlineEvent": "Aktivasi Acara Offline",
     "offlineEventDescription": "Aktivasi acara offline dan solusi pemasaran pengalaman",
-    "description": "Kami menyediakan solusi periklanan komprehensif untuk membantu merek Anda menjangkau audiens yang tepat"
+    "description": "Kami menyediakan solusi periklanan komprehensif untuk membantu merek Anda menjangkau audiens yang tepat",
+    "strategicSolution": "Solusi Strategis",
+    "launchCampaign": "Mulai Kampanye Anda",
+    "backToHome": "Kembali ke Beranda",
+    "notFound": "Layanan Tidak Ditemukan",
+    "standard": "Standar",
+    "excellence": "Keunggulan"
   },
   "hero": {
     "tagline": "Berpikir Maju, Bertindak Berani",
     "title": "Revolusikan Merek Anda dengan Solusi Periklanan Avant-garde Glassbox",
-    "subtitle": "Tangkap Audiens Anda Di Mana Saja Mereka Berada — Dari Ritel, Transportasi Umum, dan Perhotelan, Glassbox Menyampaikan Periklanan yang Berdampak"
+    "subtitle": "Tangkap Audiens Anda Di Mana Saja Mereka Berada — Dari Ritel, Transportasi Umum, dan Perhotelan, Glassbox Menyampaikan Periklanan yang Berdampak",
+    "launchCampaign": "Mulai Kampanye",
+    "exploreNetwork": "Jelajahi Jaringan"
   },
   "audience": {
     "title": "Menghubungkan Merek Anda ke Audiens yang Tepat",
@@ -90,5 +98,29 @@
     "tagline": "Mitra Anda untuk Solusi Periklanan Modern dan Bertarget.",
     "privacy": "Kebijakan Privasi & Syarat & Ketentuan",
     "copyright": "© 2024 glassbox"
+  },
+  "about": {
+    "tagline": "Jaringan Visioner",
+    "title1": "Melampaui",
+    "title2": "Konvensional",
+    "locationsCount": "50+",
+    "locationsLabel": "Lokasi Aktif",
+    "primaryPlacement": "Penempatan Utama",
+    "strategicPresence": "Kehadiran Strategis",
+    "mediaKit": "Minta Media Kit Lengkap",
+    "exploreAll": "Jelajahi Semua Lokasi"
+  },
+  "contact": {
+    "tagline": "Hubungi Kami",
+    "title1": "Mari Tingkatkan",
+    "title2": "Brand Anda Bersama",
+    "description": "Siap mendominasi lanskap digital? Tim kami siap menyusun strategi berdampak tinggi yang disesuaikan dengan brand Anda.",
+    "email": "Email Kami",
+    "phone": "Hubungi Kami",
+    "visit": "Kunjungi Kami",
+    "cardTitle": "Mulai Kampanye Anda",
+    "cardDescription": "Terhubung dengan spesialis media kami untuk menciptakan kehadiran berdampak tinggi yang selaras dengan audiens Anda.",
+    "cardButton": "Dapatkan Proposal Khusus Anda",
+    "responseTime": "Estimasi waktu respon: < 24 Jam"
   }
 }

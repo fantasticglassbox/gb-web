@@ -25,23 +25,23 @@ const Contact: React.FC = () => {
           >
             <div className="flex items-center space-x-3 mb-6">
               <div className="w-12 h-px bg-glassbox-blue"></div>
-              <span className="text-glassbox-blue font-bold tracking-[0.4em] uppercase text-xs">Connect With Us</span>
+              <span className="text-glassbox-blue font-bold tracking-[0.4em] uppercase text-xs">{t('contact.tagline')}</span>
             </div>
             
             <h2 className="text-5xl md:text-7xl font-display font-bold text-gray-900 mb-8 leading-tight">
-              Let’s Scale Your <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-glassbox-blue to-glassbox-purple">Brand Together</span>
+              {t('contact.title1')} <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-glassbox-blue to-glassbox-purple">{t('contact.title2')}</span>
             </h2>
             
             <p className="text-xl text-gray-500 mb-12 leading-relaxed font-light max-w-lg">
-              Ready to dominate the digital landscape? Our team is standing by to craft a high-impact strategy tailored to your brand.
+              {t('contact.description')}
             </p>
 
             <div className="space-y-8">
               {[
-                { icon: EnvelopeIcon, label: 'Email Us', value: 'info@glassbox.id', href: inquiryMailto },
-                { icon: PhoneIcon, label: 'Call Us', value: '+62 21 1234 5678', href: 'tel:+6281138777700' },
-                { icon: MapPinIcon, label: 'Visit Us', value: 'Jakarta, Indonesia', href: inquiryMailto },
+                { icon: EnvelopeIcon, label: t('contact.email'), value: 'info@glassbox.id', href: inquiryMailto },
+                { icon: PhoneIcon, label: t('contact.phone'), value: '+62 21 1234 5678', href: 'tel:+6281138777700' },
+                { icon: MapPinIcon, label: t('contact.visit'), value: 'Jakarta, Indonesia', href: inquiryMailto },
               ].map((item, index) => (
                 <motion.a
                   key={item.label}
@@ -74,8 +74,8 @@ const Contact: React.FC = () => {
           >
             <div className="absolute -inset-4 bg-gradient-to-tr from-glassbox-blue/20 to-glassbox-purple/20 rounded-[3rem] blur-2xl opacity-50"></div>
             <div className="relative glass bg-white/80 backdrop-blur-xl p-10 md:p-16 rounded-[3rem] border border-white shadow-2xl text-center">
-              <h3 className="text-3xl font-display font-bold text-gray-900 mb-6">Start Your Campaign</h3>
-              <p className="text-gray-500 mb-10 text-lg">Connect with our media specialists to craft a high-impact presence that resonates with your audience.</p>
+              <h3 className="text-3xl font-display font-bold text-gray-900 mb-6">{t('contact.cardTitle')}</h3>
+              <p className="text-gray-500 mb-10 text-lg">{t('contact.cardDescription')}</p>
               
               <motion.a
                 whileHover={{ scale: 1.02 }}
@@ -83,11 +83,11 @@ const Contact: React.FC = () => {
                 href={inquiryMailto}
                 className="inline-block w-full bg-slate-900 text-white py-6 px-8 rounded-2xl font-bold text-xl shadow-xl hover:bg-glassbox-blue transition-all duration-300"
               >
-                Get Your Custom Proposal
+                {t('contact.cardButton')}
               </motion.a>
               
               <div className="mt-10 pt-10 border-t border-gray-100">
-                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.3em]">Estimated response time: &lt; 24 Hours</p>
+                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.3em]">{t('contact.responseTime')}</p>
               </div>
             </div>
           </motion.div>

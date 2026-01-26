@@ -136,7 +136,7 @@ const Hero: React.FC = () => {
                   whileHover={{ scale: 1.05, y: -5 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span className="relative z-10">Launch Campaign</span>
+                  <span className="relative z-10">{t('hero.launchCampaign')}</span>
                   <div className="flex -space-x-2 relative z-10">
                     <div className="w-2 h-2 rounded-full bg-white animate-pulse"></div>
                     <div className="w-2 h-2 rounded-full bg-white/50 animate-pulse delay-75"></div>
@@ -149,7 +149,7 @@ const Hero: React.FC = () => {
                   whileHover={{ scale: 1.05, y: -5 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <span>Explore Network</span>
+                  <span>{t('hero.exploreNetwork')}</span>
                 </motion.a>
               </motion.div>
             </div>

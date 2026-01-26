@@ -47,8 +47,8 @@ const About: React.FC = () => {
                 
                 {/* Image Caption */}
                 <div className="absolute bottom-10 left-10 text-white">
-                  <p className="text-xs font-bold tracking-[0.3em] uppercase opacity-70 mb-2">Primary Placement</p>
-                  <p className="text-2xl font-display font-bold">Strategic Presence</p>
+                  <p className="text-xs font-bold tracking-[0.3em] uppercase opacity-70 mb-2">{t('about.primaryPlacement')}</p>
+                  <p className="text-2xl font-display font-bold">{t('about.strategicPresence')}</p>
                 </div>
               </motion.div>
 
@@ -75,9 +75,9 @@ const About: React.FC = () => {
                 transition={{ type: "spring", stiffness: 100, delay: 0.6 }}
                 className="absolute -top-10 -left-10 z-30 bg-glassbox-blue text-white p-8 rounded-3xl shadow-2xl rotate-[-6deg] hidden lg:block"
               >
-                <p className="text-5xl font-black mb-1">50+</p>
+                <p className="text-5xl font-black mb-1">{t('about.locationsCount')}</p>
                 <p className="text-[10px] font-bold uppercase tracking-widest leading-tight opacity-80">
-                  Active Locations
+                  {t('about.locationsLabel')}
                 </p>
               </motion.div>
             </div>
@@ -94,14 +94,14 @@ const About: React.FC = () => {
               <div className="inline-flex items-center space-x-3 mb-8 bg-glassbox-blue/5 px-4 py-2 rounded-full border border-glassbox-blue/10">
                 <div className="w-2 h-2 rounded-full bg-glassbox-blue animate-pulse"></div>
                 <span className="text-glassbox-blue font-bold tracking-[0.2em] uppercase text-[10px]">
-                  The Visionary Network
+                  {t('about.tagline')}
                 </span>
               </div>
               
               <h2 className="text-5xl md:text-7xl font-display font-bold text-gray-900 mb-10 leading-[1.1] tracking-tight">
-                Beyond the <br />
+                {t('about.title1')} <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-glassbox-blue via-blue-600 to-glassbox-purple italic font-light">
-                  Conventional
+                  {t('about.title2')}
                 </span>
               </h2>
               
@@ -145,10 +145,10 @@ const About: React.FC = () => {
                 transition={{ delay: 0.8 }}
               >
                 <a href="#contact" className="px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-glassbox-blue transition-all shadow-xl shadow-black/5">
-                  Request Full Media Kit
+                  {t('about.mediaKit')}
                 </a>
                 <a href="#contact" className="text-glassbox-blue font-bold text-xs uppercase tracking-widest group flex items-center">
-                  <span>Explore All Locations</span>
+                  <span>{t('about.exploreAll')}</span>
                   <span className="ml-2 group-hover:translate-x-2 transition-transform duration-300">→</span>
                 </a>
               </motion.div>

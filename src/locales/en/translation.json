@@ -14,12 +14,20 @@
     "oohTransitDescription": "Out-of-home transit advertising for maximum visibility and reach",
     "offlineEvent": "Offline Event Activation",
     "offlineEventDescription": "Offline event activation and experiential marketing solutions",
-    "description": "We provide comprehensive advertising solutions to help your brand reach the right audience"
+    "description": "We provide comprehensive advertising solutions to help your brand reach the right audience",
+    "strategicSolution": "Strategic Solution",
+    "launchCampaign": "Launch Your Campaign",
+    "backToHome": "Back to Home",
+    "notFound": "Service Not Found",
+    "standard": "Standard",
+    "excellence": "Excellence"
   },
   "hero": {
     "tagline": "Think Ahead, Act Bold",
     "title": "Revolutionize Your Brands with Glassbox avant-garde Advertising Solution",
-    "subtitle": "Capture Your Audience Everywhere They Go — From Retail, Public Transport, and Hospitality, Glassbox Delivers Impactful Advertising"
+    "subtitle": "Capture Your Audience Everywhere They Go — From Retail, Public Transport, and Hospitality, Glassbox Delivers Impactful Advertising",
+    "launchCampaign": "Launch Campaign",
+    "exploreNetwork": "Explore Network"
   },
   "audience": {
     "title": "Connecting Your Brand to the Right Audience",
@@ -90,5 +98,29 @@
     "tagline": "Your Partner for Modern, Targeted Advertising Solutions.",
     "privacy": "Privacy Policy & TNC",
     "copyright": "© 2024 glassbox"
+  },
+  "about": {
+    "tagline": "The Visionary Network",
+    "title1": "Beyond the",
+    "title2": "Conventional",
+    "locationsCount": "50+",
+    "locationsLabel": "Active Locations",
+    "primaryPlacement": "Primary Placement",
+    "strategicPresence": "Strategic Presence",
+    "mediaKit": "Request Full Media Kit",
+    "exploreAll": "Explore All Locations"
+  },
+  "contact": {
+    "tagline": "Connect With Us",
+    "title1": "Let’s Scale Your",
+    "title2": "Brand Together",
+    "description": "Ready to dominate the digital landscape? Our team is standing by to craft a high-impact strategy tailored to your brand.",
+    "email": "Email Us",
+    "phone": "Call Us",
+    "visit": "Visit Us",
+    "cardTitle": "Start Your Campaign",
+    "cardDescription": "Connect with our media specialists to craft a high-impact presence that resonates with your audience.",
+    "cardButton": "Get Your Custom Proposal",
+    "responseTime": "Estimated response time: < 24 Hours"
   }
 }

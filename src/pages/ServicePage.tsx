@@ -49,9 +49,9 @@ const ServicePage: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#FDFDFD]">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4 text-gray-900">Service Not Found</h1>
+          <h1 className="text-4xl font-bold mb-4 text-gray-900">{t('services.notFound')}</h1>
           <Link to="/" className="text-glassbox-blue flex items-center justify-center hover:underline font-bold">
-            <ArrowLeftIcon className="w-4 h-4 mr-2" /> Back to Home
+            <ArrowLeftIcon className="w-4 h-4 mr-2" /> {t('services.backToHome')}
           </Link>
         </div>
       </div>
@@ -74,7 +74,7 @@ const ServicePage: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <Link to="/" className="inline-flex items-center text-gray-400 hover:text-glassbox-blue mb-12 transition-all duration-300 font-bold uppercase text-xs tracking-widest group">
-              <ArrowLeftIcon className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" /> Back to Home
+              <ArrowLeftIcon className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" /> {t('services.backToHome')}
             </Link>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
@@ -83,7 +83,7 @@ const ServicePage: React.FC = () => {
                 <div className="inline-flex items-center space-x-3 mb-8 bg-glassbox-blue/5 px-4 py-2 rounded-full border border-glassbox-blue/10">
                   <div className="w-2 h-2 rounded-full bg-glassbox-blue animate-pulse"></div>
                   <span className="text-glassbox-blue font-bold tracking-[0.2em] uppercase text-[10px]">
-                    Strategic Solution
+                    {t('services.strategicSolution')}
                   </span>
                 </div>
 
@@ -126,7 +126,7 @@ const ServicePage: React.FC = () => {
                   className="inline-flex items-center space-x-4 bg-slate-900 text-white px-12 py-6 rounded-2xl font-bold text-lg shadow-xl hover:bg-glassbox-blue transition-all duration-300"
                 >
                   <EnvelopeIcon className="w-6 h-6" />
-                  <span>Launch Your Campaign</span>
+                  <span>{t('services.launchCampaign')}</span>
                 </motion.a>
               </div>
 
@@ -142,7 +142,7 @@ const ServicePage: React.FC = () => {
                   >
                     <p className="text-3xl font-black mb-0.5 leading-none">PRO</p>
                     <p className="text-[8px] font-bold uppercase tracking-widest leading-tight opacity-80">
-                      Standard <br /> Excellence
+                      {t('services.standard')} <br /> {t('services.excellence')}
                     </p>
                   </motion.div>
 
