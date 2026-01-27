@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
             <div className="space-y-8">
               {[
                 { icon: EnvelopeIcon, label: t('contact.email'), value: 'info@glassbox.id', href: inquiryMailto },
-                { icon: PhoneIcon, label: t('contact.phone'), value: '+62 21 1234 5678', href: 'tel:+6281138777700' },
+                { icon: PhoneIcon, label: t('contact.phone'), value: '+62 811 3877 7700', href: 'tel:+6281138777700' },
                 { icon: MapPinIcon, label: t('contact.visit'), value: 'Jakarta, Indonesia', href: inquiryMailto },
               ].map((item, index) => (
                 <motion.a

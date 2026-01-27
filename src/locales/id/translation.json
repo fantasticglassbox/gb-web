@@ -99,6 +99,54 @@
     "privacy": "Kebijakan Privasi & Syarat & Ketentuan",
     "copyright": "© 2024 glassbox"
   },
+  "privacy": {
+    "backToHome": "Kembali ke Beranda",
+    "trustSafety": "Kepercayaan & Keamanan",
+    "title": "Kebijakan",
+    "subtitle": "Privasi",
+    "lastUpdated": "Terakhir Diperbarui",
+    "sections": {
+      "intro": {
+        "title": "Pendahuluan",
+        "content1": "Di Glassbox, kami berkomitmen untuk melindungi privasi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, mengungkapkan, dan melindungi informasi Anda saat Anda mengunjungi situs web kami, menggunakan layanan periklanan kami, atau berinteraksi dengan aplikasi seluler kami.",
+        "content2": "Harap baca kebijakan ini dengan saksama. Jika Anda tidak setuju dengan ketentuan kebijakan privasi ini, mohon untuk tidak mengakses situs atau menggunakan layanan kami."
+      },
+      "collection": {
+        "title": "Informasi yang Kami Kumpulkan",
+        "intro": "Kami dapat mengumpulkan informasi tentang Anda dengan berbagai cara. Informasi yang mungkin kami kumpulkan meliputi:",
+        "personal": "Informasi identitas pribadi, seperti nama, alamat pengiriman, alamat email, dan nomor telepon, serta informasi demografis, seperti usia, jenis kelamin, kota asal, dan minat, yang Anda berikan secara sukarela kepada kami saat Anda mendaftar di Aplikasi atau saat Anda memilih untuk berpartisipasi dalam berbagai aktivitas.",
+        "derivative": "Informasi yang dikumpulkan server kami secara otomatis saat Anda mengakses Aplikasi, seperti tindakan asli Anda yang merupakan bagian integral dari Aplikasi, termasuk menyukai, memposting ulang, atau membalas postingan, serta interaksi lainnya dengan Aplikasi dan pengguna lain melalui file log server.",
+        "financial": "Informasi keuangan, seperti data yang terkait dengan metode pembayaran Anda (misalnya nomor kartu kredit yang valid, merek kartu, tanggal kedaluwarsa) yang mungkin kami kumpulkan saat Anda membeli, memesan, mengembalikan, menukar, atau meminta informasi tentang layanan kami.",
+        "mobile": "Informasi perangkat, seperti ID perangkat seluler, model, dan produsen perangkat Anda, serta informasi tentang lokasi perangkat Anda, jika Anda mengakses Aplikasi dari perangkat seluler."
+      },
+      "use": {
+        "title": "Penggunaan Informasi Anda",
+        "intro": "Memiliki informasi yang akurat tentang Anda memungkinkan kami untuk memberikan pengalaman yang lancar, efisien, dan disesuaikan. Secara khusus, kami dapat menggunakan informasi yang dikumpulkan tentang Anda melalui Aplikasi untuk:",
+        "item1": "Membuat dan mengelola akun Anda.",
+        "item2": "Memproses transaksi Anda dan mengirimkan informasi terkait, termasuk konfirmasi pembelian dan faktur.",
+        "item3": "Meningkatkan algoritma periklanan dan kemampuan penargetan kami.",
+        "item4": "Memantau dan menganalisis penggunaan dan tren untuk meningkatkan pengalaman Anda dengan Aplikasi.",
+        "item5": "Memberi tahu Anda tentang pembaruan pada Aplikasi atau layanan kami.",
+        "item6": "Meminta umpan balik dan menghubungi Anda tentang penggunaan Aplikasi oleh Anda.",
+        "item7": "Mencegah transaksi penipuan, memantau pencurian, dan melindungi dari aktivitas kriminal."
+      },
+      "disclosure": {
+        "title": "Pengungkapan Informasi Anda",
+        "intro": "Kami dapat membagikan informasi yang telah kami kumpulkan tentang Anda dalam situasi tertentu. Informasi Anda dapat diungkapkan sebagai berikut:",
+        "law": "Jika kami yakin pelepasan informasi tentang Anda diperlukan untuk menanggapi proses hukum, untuk menyelidiki atau memperbaiki potensi pelanggaran kebijakan kami, atau untuk melindungi hak, properti, dan keamanan orang lain.",
+        "thirdParty": "Kami dapat membagikan informasi Anda dengan pihak ketiga yang melakukan layanan untuk kami atau atas nama kami, termasuk pemrosesan pembayaran, analisis data, pengiriman email, layanan hosting, layanan pelanggan, dan bantuan pemasaran."
+      },
+      "security": {
+        "title": "Keamanan Informasi Anda",
+        "content": "Kami menggunakan langkah-langkah keamanan administratif, teknis, dan fisik untuk membantu melindungi informasi pribadi Anda. Meskipun kami telah mengambil langkah-langkah yang wajar untuk mengamankan informasi pribadi yang Anda berikan kepada kami, harap menyadari bahwa terlepas dari upaya kami, tidak ada langkah keamanan yang sempurna atau tidak dapat ditembus, dan tidak ada metode transmisi data yang dapat dijamin terhadap intersepsi atau jenis penyalahgunaan lainnya."
+      },
+      "contact": {
+        "title": "Hubungi Kami",
+        "intro": "Jika Anda memiliki pertanyaan atau komentar tentang Kebijakan Privasi ini, silakan hubungi kami di:",
+        "form": "Formulir Kontak"
+      }
+    }
+  },
   "about": {
     "tagline": "Jaringan Visioner",
     "title1": "Melampaui",

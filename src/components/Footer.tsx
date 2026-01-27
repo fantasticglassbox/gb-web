@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   FaInstagram, 
@@ -94,7 +95,7 @@ const Footer: React.FC = () => {
               <div>
                 <span className="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Call Us</span>
                 <a href="tel:+6281138777700" className="text-lg font-bold text-white hover:text-glassbox-blue transition-colors">
-                  +62 21 1234 5678
+                  +62 811 3877 7700
                 </a>
               </div>
               <div>
@@ -111,7 +112,7 @@ const Footer: React.FC = () => {
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase">
           <p>{t('footer.copyright')}</p>
           <div className="flex space-x-8">
-            <button className="hover:text-white transition-colors">{t('footer.privacy')}</button>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">{t('footer.privacy')}</Link>
             <span className="text-white/10 hidden md:inline">|</span>
             <p className="text-white/30">Crafted for Impact</p>
           </div>

@@ -99,6 +99,54 @@
     "privacy": "Privacy Policy & TNC",
     "copyright": "© 2024 glassbox"
   },
+  "privacy": {
+    "backToHome": "Back to Home",
+    "trustSafety": "Trust & Safety",
+    "title": "Privacy",
+    "subtitle": "Policy",
+    "lastUpdated": "Last Updated",
+    "sections": {
+      "intro": {
+        "title": "Introduction",
+        "content1": "At Glassbox, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our advertising services, or interact with our mobile applications.",
+        "content2": "Please read this policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site or use our services."
+      },
+      "collection": {
+        "title": "Information We Collect",
+        "intro": "We may collect information about you in a variety of ways. The information we may collect includes:",
+        "personal": "Personally identifiable information, such as your name, shipping address, email address, and telephone number, and demographic information, such as your age, gender, hometown, and interests, that you voluntarily give to us when you register with the Application or when you choose to participate in various activities.",
+        "derivative": "Information our servers automatically collect when you access the Application, such as your native actions that are integral to the Application, including liking, re-blogging, or replying to a post, as well as other interactions with the Application and other users via server log files.",
+        "financial": "Financial information, such as data related to your payment method (e.g. valid credit card number, card brand, expiration date) that we may collect when you purchase, order, return, exchange, or request information about our services.",
+        "mobile": "Device information, such as your mobile device ID, model, and manufacturer, and information about the location of your device, if you access the Application from a mobile device."
+      },
+      "use": {
+        "title": "Use of Your Information",
+        "intro": "Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Application to:",
+        "item1": "Create and manage your account.",
+        "item2": "Process your transactions and send you related information, including purchase confirmations and invoices.",
+        "item3": "Improve our advertising algorithms and targeting capabilities.",
+        "item4": "Monitor and analyze usage and trends to improve your experience with the Application.",
+        "item5": "Notify you of updates to the Application or our services.",
+        "item6": "Request feedback and contact you about your use of the Application.",
+        "item7": "Prevent fraudulent transactions, monitor against theft, and protect against criminal activity."
+      },
+      "disclosure": {
+        "title": "Disclosure of Your Information",
+        "intro": "We may share information we have collected about you in certain situations. Your information may be disclosed as follows:",
+        "law": "If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others.",
+        "thirdParty": "We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance."
+      },
+      "security": {
+        "title": "Security of Your Information",
+        "content": "We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse."
+      },
+      "contact": {
+        "title": "Contact Us",
+        "intro": "If you have questions or comments about this Privacy Policy, please contact us at:",
+        "form": "Contact Form"
+      }
+    }
+  },
   "about": {
     "tagline": "The Visionary Network",
     "title1": "Beyond the",

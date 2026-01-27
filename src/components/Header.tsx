@@ -66,8 +66,8 @@ const Header: React.FC = () => {
       animate={{ y: visible ? 0 : -100 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
       className={`fixed w-full top-0 z-50 transition-all duration-500 ${
-        scrolled 
-          ? 'glass shadow-glass-lg backdrop-blur-xl py-3' 
+        scrolled || location.pathname !== '/'
+          ? 'glass shadow-glass-lg backdrop-blur-xl py-3 border-b border-white/10' 
           : 'bg-transparent py-6'
       }`}
     >
@@ -83,17 +83,17 @@ const Header: React.FC = () => {
               <img
                 src="/logo.png"
                 alt="Glassbox Logo"
-                className={`h-10 w-auto transition-all duration-300 ${
+                className={`h-9 w-auto transition-all duration-300 ${
                   location.pathname === '/' && !scrolled 
                     ? 'brightness-0 invert' 
-                    : ''
+                    : 'brightness-100'
                 }`}
               />
             </motion.div>
           </Link>
 
-          <nav className="hidden lg:flex items-center space-x-1">
-            {navigation.map((item: any, index: number) => (
+          <nav className="hidden lg:flex items-center space-x-2">
+            {navigation.map((item: any) => (
               <motion.div 
                 key={item.name} 
                 className="relative"
@@ -106,17 +106,16 @@ const Header: React.FC = () => {
                   >
                     <motion.button 
                       onClick={() => handleNavClick(item.href)}
-                      className={`px-4 py-2 text-sm font-bold transition-all duration-300 flex items-center relative group ${
-                        scrolled || location.pathname !== '/' ? 'text-gray-800' : 'text-white'
+                      className={`px-4 py-2 text-xs font-black uppercase tracking-[0.2em] transition-all duration-300 flex items-center relative group ${
+                        scrolled || location.pathname !== '/' ? 'text-gray-900' : 'text-white'
                       }`}
-                      whileHover={{ scale: 1.05 }}
                     >
                       {item.name}
                       <motion.div
                         animate={{ rotate: activeDropdown === item.name ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <ChevronDownIcon className="ml-1 h-4 w-4" />
+                        <ChevronDownIcon className="ml-1 h-3 w-3" />
                       </motion.div>
                       <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-glassbox-blue to-glassbox-purple transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300`}></span>
                     </motion.button>
@@ -129,12 +128,12 @@ const Header: React.FC = () => {
                           transition={{ duration: 0.2 }}
                           className="absolute top-full left-0 mt-2 w-56 bg-white/95 backdrop-blur-xl rounded-2xl shadow-glass-lg border border-gray-100 z-50 py-2 overflow-hidden"
                         >
-                          {item.submenu.map((subItem: any, subIndex: number) => (
+                          {item.submenu.map((subItem: any) => (
                             <Link
                               key={subItem.name}
                               to={subItem.href}
                               onClick={() => setIsMenuOpen(false)}
-                              className="block px-4 py-3 text-sm text-gray-700 hover:bg-glassbox-blue/10 hover:text-glassbox-blue transition-all duration-200 relative group"
+                              className="block px-6 py-3.5 text-[10px] font-black uppercase tracking-widest text-gray-700 hover:bg-glassbox-blue/5 hover:text-glassbox-blue transition-all duration-200 relative group"
                             >
                               {subItem.name}
                               <span className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-glassbox-blue to-glassbox-purple transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300"></span>
@@ -148,8 +147,8 @@ const Header: React.FC = () => {
                   item.href.startsWith('#') ? (
                     <button
                       onClick={() => handleNavClick(item.href)}
-                      className={`px-4 py-2 text-sm font-bold transition-all duration-300 relative group ${
-                        scrolled || location.pathname !== '/' ? 'text-gray-800' : 'text-white'
+                      className={`px-4 py-2 text-xs font-black uppercase tracking-[0.2em] transition-all duration-300 relative group ${
+                        scrolled || location.pathname !== '/' ? 'text-gray-900' : 'text-white'
                       }`}
                     >
                       {item.name}
@@ -158,8 +157,8 @@ const Header: React.FC = () => {
                   ) : (
                     <Link
                       to={item.href}
-                      className={`px-4 py-2 text-sm font-bold transition-all duration-300 relative group ${
-                        scrolled || location.pathname !== '/' ? 'text-gray-800' : 'text-white'
+                      className={`px-4 py-2 text-xs font-black uppercase tracking-[0.2em] transition-all duration-300 relative group ${
+                        scrolled || location.pathname !== '/' ? 'text-gray-900' : 'text-white'
                       }`}
                     >
                       {item.name}
@@ -171,31 +170,31 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* Language Dropdown & Mobile Menu Button */}
-          <div className="flex items-center space-x-4">
-            {/* CTA Button - Desktop */}
+          {/* Right Controls */}
+          <div className="flex items-center space-x-3">
+            {/* CTA Button */}
             <motion.a
               href={inquiryMailto}
-              className={`hidden md:flex items-center space-x-2 px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 shadow-lg hover:shadow-glassbox-blue/30 ${
-                scrolled 
+              className={`hidden md:flex items-center space-x-2 px-6 py-2.5 rounded-full font-black uppercase tracking-widest text-[10px] transition-all duration-500 shadow-elegant hover:shadow-glassbox-blue/30 ${
+                scrolled || location.pathname !== '/'
                   ? 'bg-slate-900 text-white hover:bg-glassbox-blue' 
                   : 'bg-white text-slate-900 hover:bg-glassbox-blue hover:text-white'
               }`}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
               <span>Start Now</span>
             </motion.a>
 
-            {/* Language Dropdown */}
+            {/* Language Switcher */}
             <div className="relative">
               <motion.button
                 onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-                className={`flex items-center space-x-1 text-xs font-bold px-3 py-2 border rounded-full transition-all duration-300 shadow-sm ${
-                  scrolled 
-                    ? 'text-gray-800 border-gray-200 bg-white/50' 
-                    : 'text-white border-white/30 bg-white/10'
-                } hover:border-glassbox-blue hover:shadow-md`}
+                className={`flex items-center space-x-1 text-[10px] font-black px-4 py-2.5 border rounded-full transition-all duration-500 shadow-sm ${
+                  scrolled || location.pathname !== '/'
+                    ? 'text-gray-900 border-gray-200 bg-white/50' 
+                    : 'text-white border-white/20 bg-white/5'
+                } hover:border-glassbox-blue hover:shadow-elegant`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -211,21 +210,21 @@ const Header: React.FC = () => {
               <AnimatePresence>
                 {isLanguageOpen && (
                   <motion.div 
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute right-0 mt-2 w-24 bg-white/95 backdrop-blur-xl rounded-xl shadow-glass-lg border border-gray-100 z-10 overflow-hidden"
+                    className="absolute right-0 mt-2 w-32 bg-white/95 backdrop-blur-xl rounded-2xl shadow-glass-lg border border-gray-100 z-10 overflow-hidden py-1"
                   >
                     <button
                       onClick={() => changeLanguage('id')}
-                      className="block w-full text-center px-4 py-2.5 text-xs font-bold text-gray-700 hover:bg-glassbox-blue/10 hover:text-glassbox-blue transition-all duration-200 border-b border-gray-50"
+                      className="block w-full text-center px-4 py-3 text-[10px] font-black tracking-widest text-gray-700 hover:bg-glassbox-blue/5 hover:text-glassbox-blue transition-all duration-200 border-b border-gray-50"
                     >
                       INDONESIA
                     </button>
                     <button
                       onClick={() => changeLanguage('en')}
-                      className="block w-full text-center px-4 py-2.5 text-xs font-bold text-gray-700 hover:bg-glassbox-blue/10 hover:text-glassbox-blue transition-all duration-200"
+                      className="block w-full text-center px-4 py-3 text-[10px] font-black tracking-widest text-gray-700 hover:bg-glassbox-blue/5 hover:text-glassbox-blue transition-all duration-200"
                     >
                       ENGLISH
                     </button>
@@ -236,16 +235,16 @@ const Header: React.FC = () => {
             
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`lg:hidden p-2 rounded-full transition-colors duration-300 ${
-                scrolled ? 'text-gray-800 bg-gray-100' : 'text-white bg-white/10'
-              }`}
+              className={`lg:hidden p-2.5 rounded-full transition-all duration-300 ${
+                scrolled || location.pathname !== '/' ? 'text-gray-900 bg-gray-100' : 'text-white bg-white/10'
+              } hover:bg-glassbox-blue hover:text-white`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
               {isMenuOpen ? (
-                <XMarkIcon className="h-6 w-6" />
+                <XMarkIcon className="h-5 w-5" />
               ) : (
-                <Bars3Icon className="h-6 w-6" />
+                <Bars3Icon className="h-5 w-5" />
               )}
             </motion.button>
           </div>

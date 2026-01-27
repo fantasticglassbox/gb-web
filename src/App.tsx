@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import './i18n';
 import Home from './pages/Home';
 import ServicePage from './pages/ServicePage';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services/:slug" element={<ServicePage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
     </div>
   );
