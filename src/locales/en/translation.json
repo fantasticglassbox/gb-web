@@ -170,5 +170,13 @@
     "cardDescription": "Connect with our media specialists to craft a high-impact presence that resonates with your audience.",
     "cardButton": "Get Your Custom Proposal",
     "responseTime": "Estimated response time: < 24 Hours"
+  },
+  "error": {
+    "notFound": {
+      "title": "404",
+      "subtitle": "Page Not Found",
+      "description": "The page you are looking for doesn't exist or has been moved to another coordinate.",
+      "backHome": "Back to Home"
+    }
   }
 }

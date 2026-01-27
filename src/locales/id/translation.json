@@ -170,5 +170,13 @@
     "cardDescription": "Terhubung dengan spesialis media kami untuk menciptakan kehadiran berdampak tinggi yang selaras dengan audiens Anda.",
     "cardButton": "Dapatkan Proposal Khusus Anda",
     "responseTime": "Estimasi waktu respon: < 24 Jam"
+  },
+  "error": {
+    "notFound": {
+      "title": "404",
+      "subtitle": "Halaman Tidak Ditemukan",
+      "description": "Halaman yang Anda cari tidak ada atau telah dipindahkan ke koordinat lain.",
+      "backHome": "Kembali ke Beranda"
+    }
   }
 }

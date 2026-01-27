@@ -4,6 +4,7 @@ import './i18n';
 import Home from './pages/Home';
 import ServicePage from './pages/ServicePage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/services/:slug" element={<ServicePage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
