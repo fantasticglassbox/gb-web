@@ -48,7 +48,7 @@ const ServicePage: React.FC = () => {
   if (!service) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#FDFDFD]">
-        <div className="text-center">
+        <div className="text-center px-6">
           <h1 className="text-4xl font-bold mb-4 text-gray-900">{t('services.notFound')}</h1>
           <Link to="/" className="text-glassbox-blue flex items-center justify-center hover:underline font-bold">
             <ArrowLeftIcon className="w-4 h-4 mr-2" /> {t('services.backToHome')}
@@ -59,62 +59,65 @@ const ServicePage: React.FC = () => {
   }
 
   return (
-    <div className="bg-[#FDFDFD] min-h-screen overflow-hidden">
+    <div className="bg-[#FDFDFD] min-h-screen">
       <Header />
       
-      {/* Background Accents (Inherited from Home/About) */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-glassbox-blue/5 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/4 pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-glassbox-purple/5 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/4 pointer-events-none"></div>
+      {/* Background Accents */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-glassbox-blue/5 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/4"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-glassbox-purple/5 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/4"></div>
+      </div>
 
-      <main className="pt-40 pb-32 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main className="pt-32 md:pt-40 pb-20 md:pb-32 relative z-10 w-full">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="w-full"
           >
-            <Link to="/" className="inline-flex items-center text-gray-400 hover:text-glassbox-blue mb-12 transition-all duration-300 font-bold uppercase text-xs tracking-widest group">
-              <ArrowLeftIcon className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" /> {t('services.backToHome')}
+            <Link to="/" className="inline-flex items-center text-gray-400 hover:text-glassbox-blue mb-10 md:mb-12 transition-all duration-300 font-black uppercase text-[10px] md:text-xs tracking-[0.2em] group">
+              <ArrowLeftIcon className="w-3.5 h-3.5 mr-2 group-hover:-translate-x-1 transition-transform" /> {t('services.backToHome')}
             </Link>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 lg:gap-24 items-start w-full">
               {/* Left Column: Content */}
-              <div className="lg:col-span-7">
-                <div className="inline-flex items-center space-x-3 mb-8 bg-glassbox-blue/5 px-4 py-2 rounded-full border border-glassbox-blue/10">
-                  <div className="w-2 h-2 rounded-full bg-glassbox-blue animate-pulse"></div>
-                  <span className="text-glassbox-blue font-bold tracking-[0.2em] uppercase text-[10px]">
+              <div className="lg:col-span-7 w-full">
+                <div className="inline-flex items-center space-x-3 mb-6 md:mb-8 bg-glassbox-blue/5 px-4 py-2 rounded-full border border-glassbox-blue/10">
+                  <div className="w-1.5 h-1.5 rounded-full bg-glassbox-blue animate-pulse"></div>
+                  <span className="text-glassbox-blue font-black tracking-[0.2em] uppercase text-[9px]">
                     {t('services.strategicSolution')}
                   </span>
                 </div>
 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-gray-900 mb-10 leading-[1.1] tracking-tight">
-                  {service.title.split(' ').slice(0, -1).join(' ')} <br />
+                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-bold text-gray-900 mb-6 md:mb-10 leading-[1.1] tracking-tight w-full break-words">
+                  {service.title.split(' ').slice(0, -1).join(' ')} <br className="hidden md:block" />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-glassbox-blue via-blue-600 to-glassbox-purple italic font-light">
                     {service.title.split(' ').pop()}
                   </span>
                 </h1>
 
-                <p className="text-2xl text-gray-500 mb-12 leading-relaxed font-light">
+                <p className="text-xl md:text-2xl text-gray-500 mb-8 md:mb-12 leading-relaxed font-light w-full">
                   {service.description}
                 </p>
                 
-                <div className="prose prose-xl mb-16 text-gray-600 font-light leading-relaxed border-l-2 border-glassbox-blue/20 pl-8">
+                <div className="prose prose-lg md:prose-xl max-w-none mb-10 md:mb-16 text-gray-600 font-light leading-relaxed border-l-2 border-glassbox-blue/20 pl-6 md:pl-8 w-full">
                   <p>{service.fullContent}</p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10 md:mb-16 w-full">
                   {service.features.map((feature: string, index: number) => (
                     <motion.div 
                       key={index}
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.2 + index * 0.1 }}
-                      className="flex items-center space-x-4 bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-elegant transition-all duration-300 group"
+                      className="flex items-center space-x-4 bg-white px-5 py-4 md:p-6 rounded-2xl md:rounded-3xl border border-gray-100 shadow-sm hover:shadow-elegant transition-all duration-300 group"
                     >
-                      <div className="w-10 h-10 rounded-xl bg-glassbox-blue/10 flex items-center justify-center text-glassbox-blue group-hover:bg-glassbox-blue group-hover:text-white transition-colors">
-                        <CheckCircleIcon className="w-6 h-6" />
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-glassbox-blue/10 flex items-center justify-center text-glassbox-blue group-hover:bg-glassbox-blue group-hover:text-white transition-colors flex-shrink-0">
+                        <CheckCircleIcon className="w-5 h-5 md:w-6 md:h-6" />
                       </div>
-                      <span className="text-gray-900 font-bold text-sm uppercase tracking-wider">{feature}</span>
+                      <span className="text-gray-900 font-black text-[9px] md:text-sm uppercase tracking-widest">{feature}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -123,25 +126,25 @@ const ServicePage: React.FC = () => {
                   href={inquiryMailto}
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center space-x-4 bg-slate-900 text-white px-12 py-6 rounded-2xl font-bold text-lg shadow-xl hover:bg-glassbox-blue transition-all duration-300"
+                  className="inline-flex items-center justify-center md:justify-start space-x-4 bg-slate-900 text-white px-8 md:px-12 py-5 md:py-6 rounded-2xl font-black uppercase tracking-[0.2em] text-xs md:text-lg shadow-xl hover:bg-glassbox-blue transition-all duration-300 w-full md:w-auto"
                 >
-                  <EnvelopeIcon className="w-6 h-6" />
+                  <EnvelopeIcon className="w-5 h-5 md:w-6 md:h-6" />
                   <span>{t('services.launchCampaign')}</span>
                 </motion.a>
               </div>
 
               {/* Right Column: Visuals */}
-              <div className="lg:col-span-5 space-y-10">
-                <div className="relative">
-                  {/* Floating Stat/Badge (Inherited Style) */}
+              <div className="lg:col-span-5 space-y-6 md:space-y-10 w-full">
+                <div className="relative w-full">
+                  {/* Floating Stat/Badge */}
                   <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ type: "spring", stiffness: 100, delay: 0.6 }}
-                    className="absolute -top-8 -right-8 z-20 bg-glassbox-blue text-white p-6 rounded-2xl shadow-2xl rotate-[6deg] hidden md:block"
+                    className="absolute -top-8 -right-4 md:-right-8 z-20 bg-glassbox-blue text-white p-4 md:p-6 rounded-2xl shadow-2xl rotate-[6deg] hidden sm:block"
                   >
-                    <p className="text-3xl font-black mb-0.5 leading-none">PRO</p>
-                    <p className="text-[8px] font-bold uppercase tracking-widest leading-tight opacity-80">
+                    <p className="text-2xl md:text-3xl font-black mb-0.5 leading-none">PRO</p>
+                    <p className="text-[7px] md:text-[8px] font-bold uppercase tracking-widest leading-tight opacity-80">
                       {t('services.standard')} <br /> {t('services.excellence')}
                     </p>
                   </motion.div>
@@ -151,7 +154,7 @@ const ServicePage: React.FC = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1, delay: 0.2 }}
-                    className="relative z-10 rounded-[3.5rem] overflow-hidden shadow-elegant-lg border-8 border-white"
+                    className="relative z-10 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden shadow-elegant-lg border-4 md:border-8 border-white w-full"
                   >
                     <img
                       src={service.image}
@@ -162,14 +165,14 @@ const ServicePage: React.FC = () => {
                 </div>
 
                 {service.gallery && (
-                  <div className="grid grid-cols-2 gap-6 relative z-10">
+                  <div className="grid grid-cols-2 gap-4 md:gap-6 relative z-10 w-full">
                     {service.gallery.map((img: string, idx: number) => (
                       <motion.div
                         key={idx}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 + idx * 0.1 }}
-                        className="relative group rounded-3xl overflow-hidden shadow-lg border-4 border-white aspect-square"
+                        className="relative group rounded-2xl md:rounded-3xl overflow-hidden shadow-lg border-2 md:border-4 border-white aspect-square w-full"
                       >
                         <div className="absolute inset-0 bg-glassbox-blue/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                         <img
