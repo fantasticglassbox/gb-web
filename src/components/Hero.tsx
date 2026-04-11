@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowDownIcon } from '@heroicons/react/24/outline';
-
 const Hero: React.FC = () => {
   const { t } = useTranslation();
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -67,16 +65,36 @@ const Hero: React.FC = () => {
         }}
       />
       
-      {/* Wave Shape Divider */}
-      <div className="absolute bottom-0 left-0 w-full z-10">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none" className="w-full h-24">
-          <path className="fill-white" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z"/>
+      {/* Bridge into About: tinted fade + gradient wave (ties hero blues to light section) */}
+      <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none leading-[0] w-full max-w-full overflow-hidden">
+        <div
+          className="h-12 w-full bg-gradient-to-b from-transparent via-slate-950/30 to-slate-900/20 sm:h-16 md:h-20"
+          aria-hidden
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          className="block h-[56px] w-full max-w-full sm:h-[68px] md:h-[84px]"
+          aria-hidden
+        >
+          <defs>
+            <linearGradient id="heroWaveSurface" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#0c4a6e" stopOpacity="0.4" />
+              <stop offset="30%" stopColor="#cbd5e1" stopOpacity="0.9" />
+              <stop offset="100%" stopColor="#FDFDFD" />
+            </linearGradient>
+          </defs>
+          <path
+            fill="url(#heroWaveSurface)"
+            d="M0,120V48C200,88 400,28 600,58C800,88 1000,38 1200,62C1320,76 1380,68 1440,64V120H0Z"
+          />
         </svg>
       </div>
       
       {/* Hero Content */}
       <motion.div 
-        className="relative z-10 min-h-screen flex items-center pt-32 pb-20"
+        className="relative z-10 flex min-h-screen items-center pt-32 pb-24 sm:pb-28 md:pb-32"
         style={{ opacity }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -158,14 +176,6 @@ const Hero: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <ArrowDownIcon className="h-8 w-8 text-white/60" />
-      </motion.div>
     </section>
   );
 };

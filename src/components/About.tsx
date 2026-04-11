@@ -15,21 +15,28 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-40 bg-[#FDFDFD] relative overflow-hidden">
-      {/* Dynamic Background Elements */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-glassbox-blue/5 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/2"></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-glassbox-purple/5 rounded-full blur-[140px] translate-y-1/2 -translate-x-1/2"></div>
-      
-      {/* Decorative Lines */}
-      <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-100 to-transparent"></div>
-      <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-100 to-transparent"></div>
+    <section
+      id="about"
+      className="relative z-20 -mt-12 w-full max-w-full min-w-0 overflow-x-hidden rounded-t-[1.75rem] border-t border-slate-200/80 bg-[#FDFDFD] bg-gradient-to-b from-slate-100/90 via-[#FDFDFD] to-[#FDFDFD] pt-10 pb-24 shadow-[0_-20px_50px_-14px_rgba(15,23,42,0.2)] sm:-mt-14 sm:rounded-t-[2.25rem] sm:pt-12 md:-mt-16 md:pt-14 md:pb-28 lg:-mt-[4.5rem] lg:rounded-t-[2.75rem] lg:pb-36"
+    >
+      {/* Brand accent + soft bridge from hero (contained so blobs never widen the page) */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-1 bg-gradient-to-r from-transparent via-glassbox-blue to-transparent opacity-80"
+        aria-hidden
+      />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-t-[inherit]">
+        <div className="absolute -top-24 right-0 h-[420px] w-[420px] rounded-full bg-glassbox-blue/[0.07] blur-[100px] sm:h-[480px] sm:w-[480px]" />
+        <div className="absolute -bottom-32 left-0 h-[420px] w-[420px] rounded-full bg-glassbox-purple/[0.06] blur-[100px] sm:h-[480px] sm:w-[480px]" />
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
-          
-          {/* Left: Collage Visuals */}
-          <div className="lg:col-span-6 relative order-2 lg:order-1">
-            <div className="relative">
+      <div className="absolute top-1/4 left-0 right-0 h-px max-w-full bg-gradient-to-r from-transparent via-gray-100 to-transparent" />
+      <div className="absolute bottom-1/4 left-0 right-0 h-px max-w-full bg-gradient-to-r from-transparent via-gray-100 to-transparent" />
+
+      <div className="relative z-10 mx-auto max-w-7xl min-w-0 px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-20 xl:gap-24">
+          {/* Left: Collage Visuals — min-w-0 prevents grid blowout; floats stay inside padding */}
+          <div className="relative order-2 min-w-0 px-1 sm:px-0 lg:col-span-6 lg:order-1">
+            <div className="relative mx-auto max-w-lg lg:max-w-none">
               {/* Main Large Image */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
@@ -58,7 +65,7 @@ const About: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-                className="absolute -bottom-16 -right-10 lg:-right-20 z-20 w-2/3 rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white hidden md:block"
+                className="absolute -bottom-12 -right-2 z-20 hidden w-[58%] max-w-[280px] overflow-hidden rounded-[2rem] border-[6px] border-white shadow-2xl md:block lg:-right-4 lg:max-w-[320px] lg:rounded-[2.5rem] lg:border-8"
               >
                 <img
                   src="/images/digital-signage.webp"
@@ -73,7 +80,7 @@ const About: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ type: "spring", stiffness: 100, delay: 0.6 }}
-                className="absolute -top-10 -left-10 z-30 bg-glassbox-blue text-white p-8 rounded-3xl shadow-2xl rotate-[-6deg] hidden lg:block"
+                className="absolute -top-6 -left-4 z-30 hidden rotate-[-6deg] rounded-3xl bg-glassbox-blue p-6 text-white shadow-2xl sm:-left-2 sm:p-7 lg:block lg:-left-6 lg:-top-8 lg:p-8"
               >
                 <p className="text-5xl font-black mb-1">{t('about.locationsCount')}</p>
                 <p className="text-[10px] font-bold uppercase tracking-widest leading-tight opacity-80">
@@ -84,7 +91,7 @@ const About: React.FC = () => {
           </div>
 
           {/* Right: Content & Tiles */}
-          <div className="lg:col-span-6 order-1 lg:order-2">
+          <div className="order-1 min-w-0 lg:col-span-6 lg:order-2">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

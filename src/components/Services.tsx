@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 
 const Services: React.FC = () => {
   const { t } = useTranslation();
@@ -11,86 +11,115 @@ const Services: React.FC = () => {
     {
       key: 'mediaPlacement',
       slug: 'media-placement',
-      icon: '/images/digital-signage.webp',
+      image: '/images/digital-signage.webp',
       title: t('services.mediaPlacement'),
-      description: t('services.mediaPlacementDescription') || 'Strategic placement of your advertisements across high-traffic locations',
-      gradient: 'from-blue-500 to-cyan-500'
+      description: t('services.mediaPlacementDescription'),
+      accent: 'from-cyan-400/90 to-glassbox-blue',
     },
     {
       key: 'oohTransit',
       slug: 'ooh-transit',
-      icon: '/images/smart-tv.webp',
+      image: '/images/smart-tv.webp',
       title: t('services.oohTransit'),
-      description: t('services.oohTransitDescription') || 'Out-of-home transit advertising for maximum visibility and reach',
-      gradient: 'from-purple-500 to-pink-500'
+      description: t('services.oohTransitDescription'),
+      accent: 'from-glassbox-blue to-glassbox-purple',
     },
     {
       key: 'offlineEvent',
       slug: 'offline-event',
-      icon: '/images/tablets.webp',
+      image: '/images/tablets.webp',
       title: t('services.offlineEvent'),
-      description: t('services.offlineEventDescription') || 'Offline event activation and experiential marketing solutions',
-      gradient: 'from-indigo-500 to-blue-500'
-    }
+      description: t('services.offlineEventDescription'),
+      accent: 'from-glassbox-purple to-fuchsia-500/90',
+    },
   ];
 
   return (
-    <section id="services" className="py-32 bg-gray-900 relative overflow-hidden">
-      {/* Abstract Background */}
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-glassbox-blue/10 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-glassbox-purple/10 rounded-full blur-[150px] translate-y-1/2 -translate-x-1/2"></div>
+    <section id="services" className="relative overflow-x-hidden bg-[#05060a] py-20 md:py-28 lg:py-32">
+      {/* Background: contained glows + subtle grid */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-32 right-[-15%] h-[420px] w-[420px] rounded-full bg-glassbox-blue/25 blur-[100px] md:h-[520px] md:w-[520px]" />
+        <div className="absolute bottom-0 left-[-20%] h-[380px] w-[380px] rounded-full bg-glassbox-purple/20 blur-[100px] md:h-[480px] md:w-[480px]" />
+        <div
+          className="absolute inset-0 opacity-[0.35]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)`,
+            backgroundSize: '48px 48px',
+            maskImage: 'linear-gradient(to bottom, black 0%, black 40%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 40%, transparent 100%)',
+          }}
+        />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div 
-          className="text-center mb-24"
-          initial={{ opacity: 0, y: 30 }}
+      <div className="relative z-10 mx-auto max-w-7xl min-w-0 px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="mb-14 max-w-3xl md:mb-16 lg:mb-20"
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
         >
-          <h2 className="text-5xl md:text-7xl font-display font-bold text-white mb-8">
-            Strategic <span className="text-glassbox-blue">Solutions</span>
+          <span className="mb-5 inline-flex items-center rounded-full border border-white/10 bg-white/[0.06] px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.28em] text-white/60 backdrop-blur-sm">
+            {t('services.sectionEyebrow')}
+          </span>
+          <h2 className="font-sans text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            <span className="block sm:inline">{t('services.headlineStart')}</span>{' '}
+            <span className="bg-gradient-to-r from-glassbox-blue via-sky-400 to-glassbox-purple bg-clip-text text-transparent">
+              {t('services.headlineEnd')}
+            </span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-white/50 md:text-lg">
             {t('services.description')}
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {services.map((service: any, index: number) => (
-            <motion.div 
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8">
+          {services.map((service, index) => (
+            <motion.div
               key={service.key}
               id={service.slug}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="group relative h-full"
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.55, delay: index * 0.08 }}
+              className="group min-w-0"
             >
-              <Link to={`/services/${service.slug}`} className="block h-full">
-                <div className="relative glass-dark p-10 rounded-[2.5rem] border border-white/5 hover:border-glassbox-blue/30 transition-all duration-500 h-full flex flex-col items-center text-center">
-                  <div className="w-40 h-40 mb-10 relative">
-                    <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} rounded-full opacity-20 blur-2xl group-hover:opacity-40 transition-opacity duration-500`}></div>
+              <Link to={`/services/${service.slug}`} className="block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-glassbox-blue/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05060a] rounded-[1.35rem]">
+                <article className="relative flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-white/[0.08] bg-white/[0.03] shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset] transition-all duration-500 hover:border-glassbox-blue/35 hover:bg-white/[0.05] hover:shadow-[0_28px_80px_-24px_rgba(11,166,223,0.45)] md:rounded-3xl">
+                  {/* Image hero */}
+                  <div className="relative aspect-[16/10] w-full overflow-hidden md:aspect-[5/3]">
                     <img
-                      src={service.icon}
+                      src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-contain relative z-10 group-hover:scale-110 transition-transform duration-500"
+                      className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.06]"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#05060a] via-[#05060a]/40 to-transparent md:via-[#05060a]/20" />
+                    <div
+                      className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r opacity-90 transition duration-500 group-hover:opacity-100 ${service.accent}`}
+                    />
+                    <span className="absolute left-4 top-4 font-mono text-[11px] font-medium tabular-nums text-white/40">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
                   </div>
-                  <h3 className="text-3xl font-display font-bold text-white mb-6 group-hover:text-glassbox-blue transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-400 leading-relaxed font-light text-lg mb-8 flex-grow">
-                    {service.description}
-                  </p>
-                  <motion.div
-                    className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-glassbox-blue group-hover:border-transparent transition-all duration-300"
-                  >
-                    <ArrowRightIcon className="h-5 w-5 text-white" />
-                  </motion.div>
-                </div>
+
+                  <div className="flex flex-1 flex-col p-6 md:p-7">
+                    <h3 className="font-sans text-xl font-bold leading-snug tracking-tight text-white transition duration-300 group-hover:text-white md:text-2xl">
+                      {service.title}
+                    </h3>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-white/50 md:text-[15px]">
+                      {service.description}
+                    </p>
+                    <div className="mt-6 flex items-center justify-between border-t border-white/[0.06] pt-5">
+                      <span className="text-xs font-bold uppercase tracking-[0.2em] text-glassbox-blue">
+                        {t('services.exploreService')}
+                      </span>
+                      <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition duration-300 group-hover:border-glassbox-blue/50 group-hover:bg-glassbox-blue/15 group-hover:text-glassbox-blue">
+                        <ArrowUpRightIcon className="h-5 w-5 transition duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden />
+                      </span>
+                    </div>
+                  </div>
+                </article>
               </Link>
             </motion.div>
           ))}
