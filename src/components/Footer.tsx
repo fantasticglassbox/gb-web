@@ -69,14 +69,25 @@ const Footer: React.FC = () => {
                 { key: 'about', label: t('navigation.about'), action: () => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }) },
                 { key: 'services', label: t('navigation.services'), action: () => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }) },
                 { key: 'gallery', label: t('navigation.gallery'), action: () => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' }) },
-              ].map((link: any) => (
+                { key: 'articles', label: t('navigation.articles'), href: '/articles' },
+              ].map((link: { key: string; label: string; href?: string; action?: () => void }) => (
                 <li key={link.key}>
-                  <button 
-                    onClick={link.action}
-                    className="text-gray-400 hover:text-white transition-colors duration-300 font-bold uppercase text-[11px] tracking-[0.15em]"
-                  >
-                    {link.label}
-                  </button>
+                  {link.href ? (
+                    <Link
+                      to={link.href}
+                      className="text-gray-400 hover:text-white transition-colors duration-300 font-bold uppercase text-[11px] tracking-[0.15em] block"
+                    >
+                      {link.label}
+                    </Link>
+                  ) : (
+                    <button 
+                      type="button"
+                      onClick={link.action}
+                      className="text-gray-400 hover:text-white transition-colors duration-300 font-bold uppercase text-[11px] tracking-[0.15em]"
+                    >
+                      {link.label}
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>

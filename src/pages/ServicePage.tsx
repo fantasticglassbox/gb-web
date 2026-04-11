@@ -3,12 +3,16 @@ import { useParams, Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ArrowLeftIcon, EnvelopeIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { SITE_URL } from '../config/site';
+import { ogLocalePair } from '../config/seoLocales';
 
 const ServicePage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { primary: ogLocale, alternate: ogLocaleAlternate } = ogLocalePair(i18n.language);
   const { pathname } = useLocation();
 
   // Scroll to top on route change
@@ -48,6 +52,13 @@ const ServicePage: React.FC = () => {
   if (!service) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#FDFDFD]">
+        <Helmet>
+          <html lang={i18n.language === 'id' ? 'id' : 'en'} />
+          <title>{t('services.notFound')} | Glassbox</title>
+          <meta name="robots" content="noindex, follow" />
+          <meta property="og:locale" content={ogLocale} />
+          <meta property="og:locale:alternate" content={ogLocaleAlternate} />
+        </Helmet>
         <div className="text-center px-6">
           <h1 className="text-4xl font-bold mb-4 text-gray-900">{t('services.notFound')}</h1>
           <Link to="/" className="text-glassbox-blue flex items-center justify-center hover:underline font-bold">
@@ -58,8 +69,30 @@ const ServicePage: React.FC = () => {
     );
   }
 
+  const canonical = `${SITE_URL}/services/${slug}`;
+  const pageTitle = `${service.title} | Glassbox`;
+  const metaDesc = `${service.description} ${service.fullContent}`.slice(0, 160).trim();
+  const ogImage = service.image.startsWith('http') ? service.image : `${SITE_URL}${service.image}`;
+
   return (
     <div className="bg-[#FDFDFD] min-h-screen">
+      <Helmet>
+        <html lang={i18n.language === 'id' ? 'id' : 'en'} />
+        <title>{pageTitle}</title>
+        <meta name="description" content={metaDesc} />
+        <link rel="canonical" href={canonical} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={service.description} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:locale" content={ogLocale} />
+        <meta property="og:locale:alternate" content={ogLocaleAlternate} />
+        <meta property="og:image" content={ogImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={service.description} />
+        <meta name="twitter:image" content={ogImage} />
+      </Helmet>
       <Header />
       
       {/* Background Accents */}

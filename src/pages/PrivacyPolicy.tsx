@@ -3,11 +3,15 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ArrowLeftIcon, ShieldCheckIcon, LockClosedIcon, DocumentTextIcon } from '@heroicons/react/24/outline';
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { SITE_URL } from '../config/site';
+import { ogLocalePair } from '../config/seoLocales';
 
 const PrivacyPolicy: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { primary: ogLocale, alternate: ogLocaleAlternate } = ogLocalePair(i18n.language);
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -15,9 +19,26 @@ const PrivacyPolicy: React.FC = () => {
   }, [pathname]);
 
   const lastUpdated = "January 26, 2026";
+  const canonical = `${SITE_URL}/privacy-policy`;
+  const pageTitle = t('seo.privacyTitle');
+  const pageDesc = t('seo.privacyDescription');
 
   return (
     <div className="bg-[#FDFDFD] min-h-screen">
+      <Helmet>
+        <html lang={i18n.language === 'id' ? 'id' : 'en'} />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDesc} />
+        <link rel="canonical" href={canonical} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDesc} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:locale" content={ogLocale} />
+        <meta property="og:locale:alternate" content={ogLocaleAlternate} />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDesc} />
+      </Helmet>
       <Header />
       
       {/* Background Accents */}

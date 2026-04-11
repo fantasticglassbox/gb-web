@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ArrowLeftIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -11,6 +12,11 @@ const NotFound: React.FC = () => {
 
   return (
     <div className="bg-[#FDFDFD] min-h-screen flex flex-col overflow-hidden">
+      <Helmet>
+        <title>{t('error.notFound.subtitle')} | Glassbox</title>
+        <meta name="robots" content="noindex, follow" />
+        <meta property="og:locale" content="id_ID" />
+      </Helmet>
       <Header />
       
       {/* Background Accents */}

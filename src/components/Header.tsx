@@ -57,6 +57,7 @@ const Header: React.FC = () => {
       ]
     },
     { name: t('navigation.gallery'), href: '#gallery' },
+    { name: t('navigation.articles'), href: '/articles' },
     { name: t('navigation.contact'), href: '#contact' },
   ];
 
