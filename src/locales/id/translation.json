@@ -8,6 +8,10 @@
     "articles": "Wawasan",
     "menu": "Menu"
   },
+  "header": {
+    "contactCta": "Hubungi Glassbox",
+    "contactCtaShort": "Hubungi"
+  },
   "articlesPage": {
     "title": "Wawasan",
     "subtitle": "Ide untuk media modern dan OOH",

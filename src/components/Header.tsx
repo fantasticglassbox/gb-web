@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
+import { RocketLaunchIcon } from '@heroicons/react/24/solid';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 
 const Header: React.FC = () => {
@@ -14,8 +15,6 @@ const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [visible, setVisible] = useState(true);
   const { scrollY } = useScroll();
-
-  const inquiryMailto = "mailto:info@glassbox.id?subject=Inquiry: Glassbox Advertising Campaign&body=Hello Glassbox Team,%0D%0A%0D%0AI am interested in launching an advertising campaign with your network. %0D%0A%0D%0AMy Brand: %0D%0AProject Type: %0D%0ATarget Locations: %0D%0A%0D%0APlease provide more details on your media kit and pricing.%0D%0A%0D%0ABest regards,";
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() || 0;
@@ -43,6 +42,8 @@ const Header: React.FC = () => {
     i18n.changeLanguage(lang);
     setIsLanguageOpen(false);
   };
+
+  const contactCtaOnHero = location.pathname === '/' && !scrolled;
 
   const navigation = [
     { name: t('navigation.home'), href: '/' },
@@ -171,21 +172,34 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* Right Controls */}
-          <div className="flex items-center space-x-3">
-            {/* CTA Button */}
-            <motion.a
-              href={inquiryMailto}
-              className={`hidden md:flex items-center space-x-2 px-6 py-2.5 rounded-full font-black uppercase tracking-widest text-[10px] transition-all duration-500 shadow-elegant hover:shadow-glassbox-blue/30 ${
+          {/* Right Controls: CTA before language (mobile-friendly) */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            <motion.button
+              type="button"
+              onClick={() => handleNavClick('#contact')}
+              className={`group inline-flex items-center justify-center gap-2 rounded-full font-black uppercase transition-all duration-500 shadow-elegant hover:shadow-glassbox-blue/40 ring-1 ring-black/5 touch-manipulation whitespace-nowrap min-h-[44px] pl-2.5 pr-3.5 py-1.5 text-[9px] tracking-[0.12em] sm:gap-2.5 sm:pl-3 sm:pr-5 sm:py-2 sm:text-[10px] sm:tracking-[0.2em] sm:min-h-0 ${
                 scrolled || location.pathname !== '/'
-                  ? 'bg-slate-900 text-white hover:bg-glassbox-blue' 
-                  : 'bg-white text-slate-900 hover:bg-glassbox-blue hover:text-white'
+                  ? 'bg-slate-900 text-white hover:bg-glassbox-blue ring-white/10'
+                  : 'bg-white text-slate-900 hover:bg-glassbox-blue hover:text-white ring-black/5'
               }`}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.04, y: -1 }}
+              whileTap={{ scale: 0.97 }}
             >
-              <span>Start Now</span>
-            </motion.a>
+              <span
+                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-500 sm:h-9 sm:w-9 ${
+                  contactCtaOnHero
+                    ? 'bg-gradient-to-br from-glassbox-blue/25 to-glassbox-purple/30 shadow-sm group-hover:from-white/30 group-hover:to-white/20'
+                    : 'bg-white/15 shadow-inner group-hover:bg-white/25'
+                }`}
+              >
+                <RocketLaunchIcon
+                  className="h-4 w-4 text-glassbox-blue transition-colors duration-300 group-hover:text-white drop-shadow-sm sm:h-[18px] sm:w-[18px]"
+                  aria-hidden
+                />
+              </span>
+              <span className="sm:hidden">{t('header.contactCtaShort')}</span>
+              <span className="hidden sm:inline">{t('header.contactCta')}</span>
+            </motion.button>
 
             {/* Language Switcher */}
             <div className="relative">
@@ -320,6 +334,16 @@ const Header: React.FC = () => {
                     )}
                   </div>
                 ))}
+                <button
+                  type="button"
+                  onClick={() => handleNavClick('#contact')}
+                  className="mt-4 mx-4 flex w-[calc(100%-2rem)] items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-glassbox-blue to-glassbox-purple py-4 px-4 text-white font-black uppercase tracking-widest text-[10px] shadow-elegant shadow-glassbox-blue/25 active:opacity-95 touch-manipulation min-h-[52px] ring-1 ring-white/20"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/20 ring-1 ring-white/30">
+                    <RocketLaunchIcon className="h-5 w-5 text-white drop-shadow-md" aria-hidden />
+                  </span>
+                  <span className="text-left leading-tight">{t('header.contactCta')}</span>
+                </button>
               </div>
             </motion.div>
           )}

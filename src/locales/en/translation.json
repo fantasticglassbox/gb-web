@@ -8,6 +8,10 @@
     "articles": "Insights",
     "menu": "Menu"
   },
+  "header": {
+    "contactCta": "Contact Glassbox",
+    "contactCtaShort": "Contact"
+  },
   "articlesPage": {
     "title": "Insights",
     "subtitle": "Ideas for modern media and OOH",

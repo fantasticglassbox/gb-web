@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
@@ -16,6 +17,16 @@ import { ogLocalePair } from '../config/seoLocales';
 
 const Home: React.FC = () => {
   const { t, i18n } = useTranslation();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash !== '#contact') return;
+    const id = window.setTimeout(() => {
+      document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+    return () => window.clearTimeout(id);
+  }, [location.pathname, location.hash]);
+
   const title = t('seo.homeTitle');
   const description = t('seo.homeDescription');
   const canonical = `${SITE_URL}/`;
