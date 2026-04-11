@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { SITE_URL } from '../config/site';
 import { OG_LOCALE_ID, ogLocalePair } from '../config/seoLocales';
+import { getArticleCoverAbsoluteUrl, getArticleCoverPath } from '../config/articleCovers';
 
 const ArticleDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -26,6 +27,8 @@ const ArticleDetail: React.FC = () => {
       date: t(`articlesPage.items.${slug}.date`),
       excerpt: t(`articlesPage.items.${slug}.excerpt`),
       paragraphs: Array.isArray(paragraphs) ? paragraphs : [],
+      coverSrc: getArticleCoverPath(slug),
+      coverAbsoluteUrl: getArticleCoverAbsoluteUrl(slug),
     };
   }, [slug, isValid, t]);
 
@@ -63,6 +66,7 @@ const ArticleDetail: React.FC = () => {
     headline: article.title,
     datePublished: article.date,
     description: article.excerpt,
+    image: article.coverAbsoluteUrl,
     author: {
       '@type': 'Organization',
       name: 'Glassbox',
@@ -95,8 +99,8 @@ const ArticleDetail: React.FC = () => {
         <meta property="article:published_time" content={article.date} />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={article.excerpt} />
-        <meta property="og:image" content={`${SITE_URL}/logo.png`} />
-        <meta name="twitter:image" content={`${SITE_URL}/logo.png`} />
+        <meta property="og:image" content={article.coverAbsoluteUrl} />
+        <meta name="twitter:image" content={article.coverAbsoluteUrl} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
@@ -136,6 +140,16 @@ const ArticleDetail: React.FC = () => {
             >
               {t('articlesPage.published')}: {article.date}
             </time>
+
+            <figure className="mb-8 md:mb-10 rounded-2xl md:rounded-3xl overflow-hidden border border-gray-100 shadow-sm bg-gray-100 aspect-[16/10] md:aspect-[2/1] relative">
+              <img
+                src={article.coverSrc}
+                alt={article.title}
+                className="w-full h-full object-cover"
+                width={1200}
+                height={630}
+              />
+            </figure>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gray-900 mb-8 tracking-tight leading-tight w-full break-words">
               {article.title}

@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { SITE_URL } from '../config/site';
 import { ogLocalePair } from '../config/seoLocales';
+import { getArticleCoverPath } from '../config/articleCovers';
 
 const Articles: React.FC = () => {
   const { t, i18n } = useTranslation();
@@ -87,6 +88,7 @@ const Articles: React.FC = () => {
                 const title = t(`articlesPage.items.${slug}.title`);
                 const excerpt = t(`articlesPage.items.${slug}.excerpt`);
                 const date = t(`articlesPage.items.${slug}.date`);
+                const coverSrc = getArticleCoverPath(slug);
                 return (
                   <motion.article
                     key={slug}
@@ -97,21 +99,31 @@ const Articles: React.FC = () => {
                   >
                     <Link
                       to={`/articles/${slug}`}
-                      className="block bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-elegant hover:border-glassbox-blue/20 transition-all duration-300 p-6 md:p-8 w-full"
+                      className="flex flex-col md:flex-row bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-elegant hover:border-glassbox-blue/20 transition-all duration-300 overflow-hidden w-full text-left"
                     >
-                      <time
-                        dateTime={date}
-                        className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3 block"
-                      >
-                        {t('articlesPage.published')}: {date}
-                      </time>
-                      <h2 className="text-xl md:text-2xl font-display font-bold text-gray-900 mb-3 group-hover:text-glassbox-blue transition-colors">
-                        {title}
-                      </h2>
-                      <p className="text-gray-600 leading-relaxed mb-4 font-light">{excerpt}</p>
-                      <span className="text-glassbox-blue font-black uppercase text-[10px] tracking-widest">
-                        {t('articlesPage.readMore')} →
-                      </span>
+                      <div className="relative md:w-[42%] lg:w-[40%] shrink-0 aspect-[16/10] md:aspect-auto md:min-h-[220px] overflow-hidden bg-gray-100">
+                        <img
+                          src={coverSrc}
+                          alt={title}
+                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-black/10 pointer-events-none" />
+                      </div>
+                      <div className="flex flex-col justify-center p-6 md:p-8 md:pl-8 flex-1 min-w-0">
+                        <time
+                          dateTime={date}
+                          className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3 block"
+                        >
+                          {t('articlesPage.published')}: {date}
+                        </time>
+                        <h2 className="text-xl md:text-2xl font-display font-bold text-gray-900 mb-3 group-hover:text-glassbox-blue transition-colors">
+                          {title}
+                        </h2>
+                        <p className="text-gray-600 leading-relaxed mb-4 font-light line-clamp-3">{excerpt}</p>
+                        <span className="text-glassbox-blue font-black uppercase text-[10px] tracking-widest">
+                          {t('articlesPage.readMore')} →
+                        </span>
+                      </div>
                     </Link>
                   </motion.article>
                 );
