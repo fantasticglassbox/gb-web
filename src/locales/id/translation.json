@@ -11,11 +11,51 @@
   "articlesPage": {
     "title": "Wawasan",
     "subtitle": "Ide untuk media modern dan OOH",
-    "description": "Sudut pandang praktis tentang digital signage, media transit, dan aktivasi merek di Indonesia.",
+    "description": "Sudut pandang praktis tentang OOH, DOOH, digital signage, media transit, dan aktivasi merek di Indonesia.",
     "readMore": "Baca artikel",
     "backToList": "Semua wawasan",
     "published": "Dipublikasikan",
     "items": {
+      "ooh-vs-dooh-panduan-merek-indonesia": {
+        "title": "OOH vs DOOH: apa bedanya dan kapan memakai masing-masing?",
+        "date": "2026-04-28",
+        "excerpt": "Out-of-home klasik (vinil, billboard cetak, stiker) dan digital out-of-home (layar terjadwal) memenuhi fungsi berbeda dalam funnel. Panduan singkat untuk tim merek di Indonesia.",
+        "paragraphs": [
+          "OOH tradisional unggul pada massa visual besar, biaya produksi per tayang rendah untuk periode panjang, dan kehadiran permanen di satu lokasi ikonik—cocok untuk awareness jangka menengah ketika pesan tidak berubah setiap hari.",
+          "DOOH menambahkan fleksibilitas: ganti kreatif cepat, penjadwalan menurut waktu atau konteks, dan peluang integrasi data untuk optimasi berulang—ideal untuk promo terbatas, peluncuran produk, atau A/B di lapangan.",
+          "Kombinasi sering paling kuat: DOOH di koridor dan ritel padat untuk frekuensi dan relevansi, ditambah OOH statis di landmark atau kampanye musiman untuk jejak visual yang tebal. Glassbox membantu merek merancang campuran itu agar operasionalnya tetap ringan."
+        ]
+      },
+      "metrik-dooh-proof-of-play-indonesia": {
+        "title": "Metrik DOOH di Indonesia: proof of play, tayang, dan cara membaca laporan",
+        "date": "2026-04-27",
+        "excerpt": "Pengiklan digital terbiasa dengan impresi dan klik; DOOH memakai istilah lain. Memahami proof of play dan definisi tayang membantu menyelaraskan ekspektasi dengan mitra media.",
+        "paragraphs": [
+          "Proof of play adalah bukti bahwa konten benar-benar tayang sesuai jadwal—lewat log perangkat, tangkapan audit, atau laporan jaringan. Ini dasar akuntabilitas sebelum membahas angka jangkauan.",
+          "Estimasi impresi DOOH biasanya memadukan data lalu lintas pejalan kaki atau kendaraan dengan asumsi visibilitas layar; metode antar penyedia bisa berbeda, jadi bandingkan apel dengan apel saat mengevaluasi proposal.",
+          "Mulai dari KPI sederhana: tayang terjadwal vs aktual, konsistensi durasi spot, dan kesesuaian lokasi dengan target audiens. Dari situ merek bisa menambah metrik lanjutan seiring kedalaman kerja sama."
+        ]
+      },
+      "dooh-kreatif-durasi-zona-aman-indonesia": {
+        "title": "Kreatif DOOH: durasi tayang, zona aman, dan membaca dari jarak jauh",
+        "date": "2026-04-26",
+        "excerpt": "Layar publik bukan feed ponsel: waktu melihat pendek dan jarak bervariasi. Berikut praktik desain yang menjaga merek tetap jelas tanpa memaksakan terlalu banyak informasi.",
+        "paragraphs": [
+          "Aturan praktis: satu ide utama per versi, tipografi besar, kontras tinggi, dan hindari teks panjang; jika ada gerakan, pastikan pesan kunci masih terbaca pada frame pertama dan terakhir.",
+          "Zona aman menjaga logo, legal line, dan CTA tidak terpotong bezel atau frame venue; selalu uji mockup pada rasio layar yang dipakai di lapangan.",
+          "Durasi loop menentukan berapa lama audiens punya kesempatan menyerap pesan—padukan dengan lokasi: lift dan antrean memungkinkan baca lebih lama, koridor transit menuntut irama lebih cepat."
+        ]
+      },
+      "format-ooh-indonesia-ritel-transit-jalan": {
+        "title": "Format OOH & DOOH di Indonesia: ritel, transit, dan jalan raya",
+        "date": "2026-04-24",
+        "excerpt": "Dari layar di mal hingga tubuh kendaraan dan struktur jalan—setiap format punya ritme audiens berbeda. Ringkasan untuk perencanaan media luar ruang.",
+        "paragraphs": [
+          "Ritel dan mal menawarkan konteks belanja serta pengulangan paparan dalam satu kunjungan; DOOH di sini mendukung pesan yang bisa diperbarui sesuai promo atau waktu buka tutup tenant.",
+          "Transit—bus, halte, stasiun—menjangkau perjalanan harian dengan pola frekuensi mingguan; kreatif harus tahan gangguan visual lingkungan dan tetap terbaca saat orang bergerak.",
+          "Jalan raya dan struktur vertikal memberi jangkauan luas untuk awareness; biasanya membutuhkan pesan sangat ringkas dan identitas merek yang kuat agar tetap diingat setelah sekali lihat."
+        ]
+      },
       "social-commerce-kreator-indonesia-ooh": {
         "title": "Social commerce & kreator di Indonesia: melengkapi jangkauan dengan OOH",
         "date": "2026-04-18",
@@ -93,7 +133,7 @@
         "paragraphs": [
           "Media transit menjangkau orang yang bergerak namun tetap perhatian—terutama di koridor dengan waktu tunggu panjang atau perjalanan pulang-pergi mingguan yang berulang.",
           "Kreatif harus terbaca sekilas: satu pesan utama, kontras kuat, dan satu ajakan bertindak bila memungkinkan.",
-          "Di Indonesia, memadukan koridor utama dengan layar indoor atau venue pelengkap dapat memperkuat ceraya yang sama tanpa kelelahan audiens."
+          "Di Indonesia, memadukan koridor utama dengan layar indoor atau venue pelengkap dapat memperkuat cerita yang sama tanpa kelelahan audiens."
         ]
       },
       "experiential-activation-offline-events": {
@@ -108,6 +148,10 @@
       }
     },
     "slugs": [
+      "ooh-vs-dooh-panduan-merek-indonesia",
+      "metrik-dooh-proof-of-play-indonesia",
+      "dooh-kreatif-durasi-zona-aman-indonesia",
+      "format-ooh-indonesia-ritel-transit-jalan",
       "social-commerce-kreator-indonesia-ooh",
       "ai-search-brand-discovery-indonesia-2026",
       "video-pendek-live-commerce-titik-fisik-indonesia",

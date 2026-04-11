@@ -5,6 +5,10 @@ import { SITE_URL } from './site';
  * Files live in `public/images/articles/`.
  */
 const ARTICLE_COVERS: Record<string, string> = {
+  'ooh-vs-dooh-panduan-merek-indonesia': '/images/articles/ooh-vs-dooh-panduan-merek-indonesia.jpg',
+  'metrik-dooh-proof-of-play-indonesia': '/images/articles/metrik-dooh-proof-of-play-indonesia.jpg',
+  'dooh-kreatif-durasi-zona-aman-indonesia': '/images/articles/dooh-kreatif-durasi-zona-aman-indonesia.jpg',
+  'format-ooh-indonesia-ritel-transit-jalan': '/images/articles/format-ooh-indonesia-ritel-transit-jalan.jpg',
   'social-commerce-kreator-indonesia-ooh': '/images/articles/social-commerce-kreator-indonesia-ooh.jpg',
   'ai-search-brand-discovery-indonesia-2026': '/images/articles/ai-search-brand-discovery-indonesia-2026.jpg',
   'video-pendek-live-commerce-titik-fisik-indonesia':

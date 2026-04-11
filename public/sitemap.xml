@@ -31,6 +31,26 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://glassbox.id/articles/ooh-vs-dooh-panduan-merek-indonesia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glassbox.id/articles/metrik-dooh-proof-of-play-indonesia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glassbox.id/articles/dooh-kreatif-durasi-zona-aman-indonesia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glassbox.id/articles/format-ooh-indonesia-ritel-transit-jalan</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://glassbox.id/articles/social-commerce-kreator-indonesia-ooh</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
