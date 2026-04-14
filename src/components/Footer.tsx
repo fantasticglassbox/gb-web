@@ -70,6 +70,7 @@ const Footer: React.FC = () => {
                 { key: 'services', label: t('navigation.services'), action: () => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }) },
                 { key: 'gallery', label: t('navigation.gallery'), action: () => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' }) },
                 { key: 'articles', label: t('navigation.articles'), href: '/articles' },
+                { key: 'careers', label: t('navigation.careers'), href: '/careers' },
               ].map((link: { key: string; label: string; href?: string; action?: () => void }) => (
                 <li key={link.key}>
                   {link.href ? (
