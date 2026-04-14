@@ -1,0 +1,63 @@
+{
+  "badge": "Careers",
+  "title": "Careers at Glassbox",
+  "description": "Explore career opportunities to grow with Glassbox in media business development and advertising solutions.",
+  "sectionTitle": "Open Positions",
+  "sectionDescription": "",
+  "emptyTitle": "No Active Openings Yet",
+  "emptyDescription": "There are no published vacancies at the moment. Please check again soon.",
+  "applyLabel": "Send your CV to",
+  "email": "info@glassbox.id",
+  "vacancies": [
+    {
+      "title": "Sales & Business Development",
+      "department": "Commercial",
+      "level": "Executive",
+      "location": "Jakarta",
+      "employmentType": "Full-time",
+      "workModel": "Hybrid",
+      "experience": "Minimum 2 years in B2B Sales / Business Development",
+      "salaryRange": "Base salary + performance incentive",
+      "postedDate": "2026-04-14",
+      "applicationDeadline": "2026-05-15",
+      "summary": "Develop new business opportunities, build client relationships, and drive sales targets for Glassbox media placement services.",
+      "responsibilities": [
+        "Actively source and manage a pipeline of new client prospects.",
+        "Prepare commercial proposals and service presentations based on client needs.",
+        "Build long-term relationships with clients and strategic partners.",
+        "Coordinate with operations team to ensure campaign delivery quality.",
+        "Achieve monthly/quarterly sales targets and maintain activity reports."
+      ],
+      "requirements": [
+        "Minimum D3/S1 degree from any major.",
+        "Experience in B2B sales, media, advertising, or agency is a strong plus.",
+        "Strong communication, presentation confidence, and negotiation skills.",
+        "Familiar with end-to-end sales process from prospecting to closing.",
+        "Able to work independently and collaboratively within a team."
+      ],
+      "benefits": [
+        "Competitive base salary.",
+        "Performance incentives and commission scheme.",
+        "Networking opportunities with major brands and partners.",
+        "Agile and supportive work environment."
+      ],
+      "application": {
+        "method": "Send your CV and short profile by email.",
+        "email": "info@glassbox.id",
+        "subject": "Application Sales & Business Development - [Full Name]",
+        "documents": [
+          "Updated CV",
+          "Sales achievement portfolio (if available)",
+          "LinkedIn profile (optional)"
+        ],
+        "steps": [
+          "Submit your application email using the requested subject format.",
+          "HR/Recruitment team will run initial screening.",
+          "Shortlisted candidates will be invited for interview and case discussion."
+        ]
+      },
+      "slug": "sales-business-development",
+      "isActive": true
+    }
+  ]
+}

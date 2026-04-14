@@ -1,0 +1,63 @@
+{
+  "badge": "Karir",
+  "title": "Berkarir di Glassbox",
+  "description": "Temukan peluang karir untuk bertumbuh bersama Glassbox dalam pengembangan bisnis media dan solusi periklanan.",
+  "sectionTitle": "Posisi Tersedia",
+  "sectionDescription": "",
+  "emptyTitle": "Belum Ada Lowongan Aktif",
+  "emptyDescription": "Saat ini belum ada posisi yang dipublikasikan. Silakan cek kembali nanti.",
+  "applyLabel": "Kirim CV ke",
+  "email": "info@glassbox.id",
+  "vacancies": [
+    {
+      "title": "Sales & Business Development",
+      "department": "Commercial",
+      "level": "Executive",
+      "location": "Jakarta",
+      "employmentType": "Full-time",
+      "workModel": "Hybrid",
+      "experience": "Minimal 2 tahun di Sales B2B / Business Development",
+      "salaryRange": "Gaji pokok + insentif performa",
+      "postedDate": "2026-04-14",
+      "applicationDeadline": "2026-05-15",
+      "summary": "Mengembangkan peluang bisnis baru, membangun relasi klien, dan mendorong pencapaian target penjualan layanan media placement Glassbox.",
+      "responsibilities": [
+        "Mencari dan mengelola pipeline prospek klien baru secara aktif.",
+        "Menyiapkan proposal penawaran dan presentasi layanan sesuai kebutuhan klien.",
+        "Membangun relasi jangka panjang dengan klien dan partner strategis.",
+        "Berkoordinasi dengan tim operasional untuk memastikan delivery kampanye.",
+        "Mencapai target penjualan bulanan/kuartalan dan menyusun laporan aktivitas."
+      ],
+      "requirements": [
+        "Pendidikan minimal D3/S1 dari semua jurusan.",
+        "Memiliki pengalaman sales B2B, media, advertising, atau agency menjadi nilai tambah.",
+        "Komunikatif, percaya diri saat presentasi, dan negosiasi yang baik.",
+        "Terbiasa dengan proses penjualan end-to-end (prospecting sampai closing).",
+        "Mampu bekerja mandiri maupun kolaboratif dalam tim."
+      ],
+      "benefits": [
+        "Gaji pokok kompetitif.",
+        "Insentif dan komisi berdasarkan performa.",
+        "Kesempatan networking dengan brand dan partner besar.",
+        "Lingkungan kerja agile dan suportif."
+      ],
+      "application": {
+        "method": "Kirim CV dan profil singkat melalui email.",
+        "email": "info@glassbox.id",
+        "subject": "Lamaran Sales & Business Development - [Nama Lengkap]",
+        "documents": [
+          "CV terbaru",
+          "Portofolio pencapaian sales (jika ada)",
+          "LinkedIn profile (opsional)"
+        ],
+        "steps": [
+          "Kirim email lamaran dengan subject yang ditentukan.",
+          "Tim HR/Recruitment melakukan screening awal.",
+          "Kandidat terpilih diundang untuk interview dan diskusi studi kasus."
+        ]
+      },
+      "slug": "sales-business-development",
+      "isActive": true
+    }
+  ]
+}
