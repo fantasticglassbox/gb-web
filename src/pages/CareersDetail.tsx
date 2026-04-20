@@ -6,7 +6,8 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { SITE_URL } from '../config/site';
 import { ogLocalePair } from '../config/seoLocales';
-import { getVacancyBySlug } from '../content/careers';
+import { getCareerContent, getVacancyBySlug } from '../content/careers';
+import { buildGlassboxJobPostingSchema } from '../lib/jobPostingSchema';
 
 const CareersDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -64,29 +65,17 @@ const CareersDetail: React.FC = () => {
   const canonical = `${SITE_URL}/careers/${vacancy.slug}`;
   const pageTitle = `${vacancy.title} | Glassbox`;
 
-  const jobPostingSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'JobPosting',
-    title: vacancy.title,
-    description: vacancy.summary,
-    datePosted: vacancy.postedDate,
-    validThrough: vacancy.applicationDeadline ? `${vacancy.applicationDeadline}T23:59:59+07:00` : undefined,
-    employmentType: vacancy.employmentType,
+  const career = getCareerContent(i18n.language);
+  const jobPostingSchema = buildGlassboxJobPostingSchema({
+    vacancy,
+    career,
     hiringOrganization: {
-      '@type': 'Organization',
       name: 'Glassbox',
       sameAs: SITE_URL,
       logo: `${SITE_URL}/logo.png`,
     },
-    jobLocation: {
-      '@type': 'Place',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: vacancy.location,
-        addressCountry: 'ID',
-      },
-    },
-  };
+    jobPageUrl: canonical,
+  });
 
   return (
     <div className="min-h-screen bg-[#FDFDFD]">

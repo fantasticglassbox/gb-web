@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
@@ -14,10 +14,25 @@ import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 import { SITE_URL } from '../config/site';
 import { ogLocalePair } from '../config/seoLocales';
+import { sanitizedHomeSearch } from '../utils/sanitizeHomeSearch';
 
 const Home: React.FC = () => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
+  const navigate = useNavigate();
+
+  /** Strip legacy query strings on `/` (e.g. old owner `?products/…`) while keeping utm/gclid. */
+  useEffect(() => {
+    if (location.pathname !== '/') return;
+    const next = sanitizedHomeSearch(location.search);
+    if (next === location.search) return;
+    navigate(
+      next
+        ? { pathname: '/', search: next, hash: location.hash || undefined }
+        : { pathname: '/', hash: location.hash || undefined },
+      { replace: true }
+    );
+  }, [location.pathname, location.search, location.hash, navigate]);
 
   useEffect(() => {
     if (location.hash !== '#contact') return;

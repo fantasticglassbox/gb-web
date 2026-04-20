@@ -3,6 +3,7 @@ import en from './en.json';
 
 export type CareerApplication = {
   method?: string;
+  url?: string;
   email?: string;
   subject?: string;
   documents?: string[];
@@ -20,6 +21,9 @@ export type Vacancy = {
   workModel?: string;
   experience?: string;
   salaryRange?: string;
+  salaryMin?: number;
+  salaryMax?: number;
+  salaryCurrency?: string;
   postedDate?: string;
   applicationDeadline?: string;
   summary: string;
@@ -27,6 +31,13 @@ export type Vacancy = {
   requirements?: string[];
   benefits?: string[];
   application?: CareerApplication;
+};
+
+export type JobPostingPostalAddress = {
+  streetAddress: string;
+  addressRegion: string;
+  postalCode: string;
+  addressLocality?: string;
 };
 
 export type CareerContent = {
@@ -39,6 +50,7 @@ export type CareerContent = {
   emptyDescription: string;
   applyLabel: string;
   email: string;
+  jobPostingAddress?: JobPostingPostalAddress;
   vacancies: Vacancy[];
 };
 

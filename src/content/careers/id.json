@@ -57,7 +57,16 @@
         ]
       },
       "slug": "sales-business-development",
-      "isActive": true
+      "isActive": true,
+      "salaryMin": 7000000,
+      "salaryMax": 16000000,
+      "salaryCurrency": "IDR"
     }
-  ]
+  ],
+  "jobPostingAddress": {
+    "streetAddress": "Gedung perkantoran (isi alamat kantor resmi Glassbox)",
+    "addressRegion": "DKI Jakarta",
+    "postalCode": "10110",
+    "addressLocality": "Jakarta"
+  }
 }
