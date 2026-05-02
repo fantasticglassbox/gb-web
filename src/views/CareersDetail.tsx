@@ -20,7 +20,7 @@ const CareersDetail: React.FC<Props> = ({ slug }) => {
 
   if (!vacancy) {
     return (
-      <div className="min-h-screen bg-[#FDFDFD]">
+      <div className="min-h-screen bg-white">
         <main className="pt-40 pb-24 px-6 max-w-5xl mx-auto">
           <Link href="/careers" className="text-glassbox-blue font-bold hover:underline">
             Back to Careers
@@ -68,7 +68,7 @@ const CareersDetail: React.FC<Props> = ({ slug }) => {
   });
 
   return (
-    <div className="min-h-screen bg-[#FDFDFD]">
+    <div className="min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema) }}

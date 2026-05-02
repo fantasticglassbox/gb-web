@@ -3,17 +3,16 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import Hero from '../components/Hero';
-import About from '../components/About';
-import Contact from '../components/Contact';
-import Services from '../components/Services';
-import Platforms from '../components/Platforms';
-import Gallery from '../components/Gallery';
 import Partners from '../components/Partners';
+import About from '../components/About';
+import Services from '../components/Services';
+import Gallery from '../components/Gallery';
 import CTA from '../components/CTA';
+import Contact from '../components/Contact';
 import { sanitizedHomeSearch } from '../utils/sanitizeHomeSearch';
 
 const Home: React.FC = () => {
-  useTranslation(); // ensure i18n context
+  useTranslation();
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -38,13 +37,12 @@ const Home: React.FC = () => {
   return (
     <main>
       <Hero />
+      <Partners />
       <About />
       <Services />
-      <Contact />
-      <CTA />
-      <Platforms />
       <Gallery />
-      <Partners />
+      <CTA />
+      <Contact />
     </main>
   );
 };

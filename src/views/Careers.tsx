@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { ArrowLeftIcon, BriefcaseIcon } from '@heroicons/react/24/outline';
+import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { getActiveVacancies, getCareerContent } from '../content/careers';
 
 const Careers: React.FC = () => {
@@ -17,101 +17,81 @@ const Careers: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-[#FDFDFD] min-h-screen">
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-glassbox-blue/5 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/4" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-glassbox-purple/5 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/4" />
-      </div>
-
-      <main className="pt-32 md:pt-40 pb-20 md:pb-32 relative z-10 w-full">
-        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
+    <div className="bg-[#F7F8FA] min-h-screen">
+      <main className="pt-32 md:pt-40 pb-20 md:pb-32">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="w-full"
+            transition={{ duration: 0.6 }}
           >
+            {/* Back */}
             <Link
               href="/"
-              className="inline-flex items-center text-gray-400 hover:text-glassbox-blue mb-10 md:mb-12 transition-all duration-300 font-black uppercase text-[10px] md:text-xs tracking-[0.2em] group"
+              className="inline-flex items-center text-gray-400 hover:text-glassbox-blue mb-10 transition-colors font-bold uppercase text-xs tracking-widest group"
             >
               <ArrowLeftIcon className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
               {t('services.backToHome')}
             </Link>
 
-            <div className="inline-flex items-center space-x-3 mb-6 bg-glassbox-blue/5 px-4 py-2 rounded-full border border-glassbox-blue/10">
-              <BriefcaseIcon className="w-4 h-4 text-glassbox-blue" />
-              <span className="text-glassbox-blue font-black tracking-[0.2em] uppercase text-[9px]">
+            {/* Label */}
+            <div className="inline-flex items-center gap-2 mb-5">
+              <span className="w-6 h-px bg-glassbox-blue" />
+              <span className="text-glassbox-blue font-bold uppercase text-xs tracking-widest">
                 {content.badge}
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold text-gray-900 mb-4 tracking-tight leading-tight w-full break-words">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.02] tracking-tight mb-4 break-words">
               {content.title}
             </h1>
-            <p className="text-lg md:text-xl text-gray-500 mb-12 md:mb-16 max-w-2xl leading-relaxed font-light">
+            <p className="text-lg text-gray-500 mb-12 max-w-2xl leading-relaxed">
               {content.description}
             </p>
 
-            <section className="rounded-3xl bg-white border border-gray-100 shadow-sm p-8 md:p-10">
-              <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-2">
-                {content.sectionTitle}
-              </h2>
+            {/* Vacancy section */}
+            <section className="rounded-2xl bg-white border border-gray-100 shadow-card p-8 md:p-10">
+              <h2 className="text-2xl font-black text-gray-900 mb-2">{content.sectionTitle}</h2>
               {content.sectionDescription ? (
-                <p className="text-gray-600 mb-8">{content.sectionDescription}</p>
+                <p className="text-gray-500 mb-8">{content.sectionDescription}</p>
               ) : null}
 
               {vacancies.length === 0 ? (
-                <div className="rounded-2xl border border-dashed border-gray-200 bg-gray-50 p-8 text-center">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{content.emptyTitle}</h3>
-                  <p className="text-gray-600 mb-4">{content.emptyDescription}</p>
-                  <p className="text-gray-700">
+                <div className="rounded-xl border border-dashed border-gray-200 bg-[#F7F8FA] p-8 text-center">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{content.emptyTitle}</h3>
+                  <p className="text-gray-500 mb-4">{content.emptyDescription}</p>
+                  <p className="text-gray-600">
                     {content.applyLabel}{' '}
-                    <a
-                      href={`mailto:${content.email}`}
-                      className="font-bold text-glassbox-blue hover:underline"
-                    >
+                    <a href={`mailto:${content.email}`} className="font-bold text-glassbox-blue hover:underline">
                       {content.email}
                     </a>
                   </p>
                 </div>
               ) : (
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {vacancies.map((vacancy) => (
-                    <article key={vacancy.slug} className="rounded-2xl border border-gray-200 p-6">
-                      <h3 className="text-xl font-bold text-gray-900">{vacancy.title}</h3>
-                      <div className="mt-2 flex flex-wrap gap-2 text-xs">
-                        {vacancy.department ? (
-                          <span className="rounded-full bg-gray-100 px-3 py-1 text-gray-700">
-                            {vacancy.department}
-                          </span>
-                        ) : null}
-                        {vacancy.level ? (
-                          <span className="rounded-full bg-gray-100 px-3 py-1 text-gray-700">
-                            {vacancy.level}
-                          </span>
-                        ) : null}
-                        <span className="rounded-full bg-gray-100 px-3 py-1 text-gray-700">
-                          {vacancy.location}
-                        </span>
-                        <span className="rounded-full bg-gray-100 px-3 py-1 text-gray-700">
-                          {vacancy.employmentType}
-                        </span>
-                        {vacancy.workModel ? (
-                          <span className="rounded-full bg-gray-100 px-3 py-1 text-gray-700">
-                            {vacancy.workModel}
-                          </span>
-                        ) : null}
+                    <article
+                      key={vacancy.slug}
+                      className="rounded-xl border border-gray-100 bg-[#F7F8FA] hover:border-glassbox-blue/20 p-6 transition-colors"
+                    >
+                      <h3 className="text-lg font-black text-gray-900">{vacancy.title}</h3>
+                      <div className="mt-2 flex flex-wrap gap-2 text-xs mb-3">
+                        {[vacancy.department, vacancy.level, vacancy.location, vacancy.employmentType, vacancy.workModel]
+                          .filter(Boolean)
+                          .map((tag) => (
+                            <span key={tag} className="rounded-full bg-white border border-gray-200 px-3 py-1 text-gray-600 font-medium">
+                              {tag}
+                            </span>
+                          ))}
                       </div>
-                      <p className="text-gray-700 mt-3">{vacancy.summary}</p>
-                      <div className="mt-6">
-                        <Link
-                          href={`/careers/${vacancy.slug}`}
-                          className="inline-flex items-center rounded-full bg-glassbox-blue px-5 py-2.5 text-sm font-semibold text-white hover:bg-glassbox-purple transition-colors"
-                        >
-                          {viewDetailLabel}
-                        </Link>
-                      </div>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-4">{vacancy.summary}</p>
+                      <Link
+                        href={`/careers/${vacancy.slug}`}
+                        className="inline-flex items-center gap-1.5 bg-glassbox-blue text-white text-sm font-bold px-5 py-2.5 rounded-full hover:bg-glassbox-dark transition-colors"
+                      >
+                        {viewDetailLabel}
+                        <span>→</span>
+                      </Link>
                     </article>
                   ))}
                 </div>

@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { ArrowLeftIcon, DocumentTextIcon } from '@heroicons/react/24/outline';
+import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { getArticleCoverPath } from '../config/articleCovers';
 
 const Articles: React.FC = () => {
@@ -16,46 +16,42 @@ const Articles: React.FC = () => {
   const slugs = (t('articlesPage.slugs', { returnObjects: true }) as string[]) || [];
 
   return (
-    <div className="bg-[#FDFDFD] min-h-screen">
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-glassbox-blue/5 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/4" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-glassbox-purple/5 rounded-full blur-[120px] -translate-x-1/3 translate-y-1/4" />
-      </div>
-
-      <main className="pt-32 md:pt-40 pb-20 md:pb-32 relative z-10 w-full">
-        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
+    <div className="bg-[#F7F8FA] min-h-screen">
+      <main className="pt-32 md:pt-40 pb-20 md:pb-32">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="w-full"
+            transition={{ duration: 0.6 }}
           >
+            {/* Back */}
             <Link
               href="/"
-              className="inline-flex items-center text-gray-400 hover:text-glassbox-blue mb-10 md:mb-12 transition-all duration-300 font-black uppercase text-[10px] md:text-xs tracking-[0.2em] group"
+              className="inline-flex items-center text-gray-400 hover:text-glassbox-blue mb-10 transition-colors font-bold uppercase text-xs tracking-widest group"
             >
               <ArrowLeftIcon className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
               {t('services.backToHome')}
             </Link>
 
-            <div className="inline-flex items-center space-x-3 mb-6 bg-glassbox-blue/5 px-4 py-2 rounded-full border border-glassbox-blue/10">
-              <DocumentTextIcon className="w-4 h-4 text-glassbox-blue" />
-              <span className="text-glassbox-blue font-black tracking-[0.2em] uppercase text-[9px]">
+            {/* Label */}
+            <div className="inline-flex items-center gap-2 mb-5">
+              <span className="w-6 h-px bg-glassbox-blue" />
+              <span className="text-glassbox-blue font-bold uppercase text-xs tracking-widest">
                 {t('articlesPage.title')}
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold text-gray-900 mb-4 tracking-tight leading-tight w-full break-words">
+            {/* Heading */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.02] tracking-tight mb-4 break-words">
               {t('articlesPage.title')}{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-glassbox-blue to-glassbox-purple italic font-light">
-                {t('articlesPage.subtitle')}
-              </span>
+              <span className="text-glassbox-blue">{t('articlesPage.subtitle')}</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-500 mb-12 md:mb-16 max-w-2xl leading-relaxed font-light">
+            <p className="text-lg text-gray-500 mb-12 max-w-2xl leading-relaxed">
               {t('articlesPage.description')}
             </p>
 
-            <div className="grid grid-cols-1 gap-6 md:gap-8">
+            {/* Article list */}
+            <div className="grid grid-cols-1 gap-4">
               {slugs.map((slug: string, index: number) => {
                 const title = t(`articlesPage.items.${slug}.title`);
                 const excerpt = t(`articlesPage.items.${slug}.excerpt`);
@@ -64,37 +60,33 @@ const Articles: React.FC = () => {
                 return (
                   <motion.article
                     key={slug}
-                    initial={{ opacity: 0, y: 16 }}
+                    initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 * index }}
+                    transition={{ delay: 0.06 * index }}
                     className="group"
                   >
                     <Link
                       href={`/articles/${slug}`}
-                      className="flex flex-col md:flex-row bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-elegant hover:border-glassbox-blue/20 transition-all duration-300 overflow-hidden w-full text-left"
+                      className="flex flex-col md:flex-row bg-white rounded-2xl border border-gray-100 hover:border-glassbox-blue/20 hover:shadow-card transition-all duration-300 overflow-hidden"
                     >
-                      <div className="relative md:w-[42%] lg:w-[40%] shrink-0 aspect-[16/10] md:aspect-auto md:min-h-[220px] overflow-hidden bg-gray-100">
+                      {/* Cover */}
+                      <div className="relative md:w-[36%] shrink-0 aspect-[16/9] md:aspect-auto md:min-h-[200px] overflow-hidden bg-gray-100">
                         <img
                           src={coverSrc}
                           alt={title}
-                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500 ease-out"
+                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-black/10 pointer-events-none" />
                       </div>
-                      <div className="flex flex-col justify-center p-6 md:p-8 md:pl-8 flex-1 min-w-0">
-                        <time
-                          dateTime={date}
-                          className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3 block"
-                        >
+                      {/* Text */}
+                      <div className="flex flex-col justify-center p-6 md:p-8 flex-1 min-w-0">
+                        <time dateTime={date} className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2 block">
                           {t('articlesPage.published')}: {date}
                         </time>
-                        <h2 className="text-xl md:text-2xl font-display font-bold text-gray-900 mb-3 group-hover:text-glassbox-blue transition-colors">
+                        <h2 className="text-lg md:text-xl font-black text-gray-900 mb-2 leading-snug group-hover:text-glassbox-blue transition-colors">
                           {title}
                         </h2>
-                        <p className="text-gray-600 leading-relaxed mb-4 font-light line-clamp-3">
-                          {excerpt}
-                        </p>
-                        <span className="text-glassbox-blue font-black uppercase text-[10px] tracking-widest">
+                        <p className="text-gray-500 leading-relaxed text-sm mb-4 line-clamp-2">{excerpt}</p>
+                        <span className="text-glassbox-blue font-bold uppercase text-xs tracking-widest">
                           {t('articlesPage.readMore')} →
                         </span>
                       </div>

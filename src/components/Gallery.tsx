@@ -6,198 +6,127 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
+const galleryImages = [
+  { src: '4-glassbox-scaled-e1735020462672.webp', alt: 'Premium Placement', tag: 'Retail', size: 'large' },
+  { src: 'GHN03466-scaled-e1735012680736.webp', alt: 'Digital Excellence', tag: 'OOH', size: 'small' },
+  { src: '1-glassbox-scaled-e1735020477398.webp', alt: 'Strategic Presence', tag: 'Hospitality', size: 'small' },
+  { src: 'GHN03354-scaled.webp', alt: 'Visual Impact', tag: 'Public', size: 'tall' },
+  { src: 'GHN03321-scaled.webp', alt: 'Network Growth', tag: 'Digital', size: 'small' },
+  { src: 'GHN03125-scaled.webp', alt: 'Innovative Media', tag: 'Tech', size: 'wide' },
+  { src: 'GHN03280-scaled.webp', alt: 'Seamless Integration', tag: 'Smart TV', size: 'small' },
+  { src: 'GHN03420-scaled.webp', alt: 'Audience Engagement', tag: 'Interactive', size: 'small' },
+];
+
 const Gallery: React.FC = () => {
   const { t } = useTranslation();
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [selectedImage, setSelectedImage] = useState<any>(null);
-
-  const galleryImages = [
-    { 
-      src: '4-glassbox-scaled-e1735020462672.webp', 
-      alt: 'Premium Placement', 
-      tag: 'Retail',
-      size: 'large' // takes up 2x2 or similar in a grid
-    },
-    { 
-      src: 'GHN03466-scaled-e1735012680736.webp', 
-      alt: 'Digital Excellence', 
-      tag: 'OOH',
-      size: 'small'
-    },
-    { 
-      src: '1-glassbox-scaled-e1735020477398.webp', 
-      alt: 'Strategic Presence', 
-      tag: 'Hospitality',
-      size: 'small'
-    },
-    { 
-      src: 'GHN03354-scaled.webp', 
-      alt: 'Visual Impact', 
-      tag: 'Public',
-      size: 'tall'
-    },
-    { 
-      src: 'GHN03321-scaled.webp', 
-      alt: 'Network Growth', 
-      tag: 'Digital',
-      size: 'small'
-    },
-    { 
-      src: 'GHN03125-scaled.webp', 
-      alt: 'Innovative Media', 
-      tag: 'Tech',
-      size: 'wide'
-    },
-    { 
-      src: 'GHN03280-scaled.webp', 
-      alt: 'Seamless Integration', 
-      tag: 'Smart TV',
-      size: 'small'
-    },
-    { 
-      src: 'GHN03420-scaled.webp', 
-      alt: 'Audience Engagement', 
-      tag: 'Interactive',
-      size: 'small'
-    }
-  ];
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [selectedImage, setSelectedImage] = useState<(typeof galleryImages)[0] | null>(null);
 
   return (
-    <section id="gallery" className="py-40 bg-[#FDFDFD] relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-glassbox-blue/5 rounded-full blur-[140px] -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-glassbox-purple/5 rounded-full blur-[140px] translate-x-1/2 translate-y-1/2"></div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
-        <motion.div 
-          className="max-w-3xl mb-20"
-          initial={{ opacity: 0, x: -30 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="inline-flex items-center space-x-3 mb-6 bg-glassbox-blue/5 px-4 py-2 rounded-full border border-glassbox-blue/10">
-            <div className="w-2 h-2 rounded-full bg-glassbox-blue animate-pulse"></div>
-            <span className="text-glassbox-blue font-bold tracking-[0.2em] uppercase text-[10px]">
-              Visual Showcase
-            </span>
+    <section id="gallery" className="bg-[#F7F8FA] py-24 md:py-32 lg:py-40">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" ref={ref}>
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
+          <div>
+            <div className="inline-flex items-center gap-2 mb-5">
+              <span className="w-6 h-px bg-glassbox-blue" />
+              <span className="text-glassbox-blue text-xs font-bold uppercase tracking-[0.25em]">
+                Visual Showcase
+              </span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.05] tracking-tight">
+              Dampak <span className="text-glassbox-blue">Nyata</span>
+            </h2>
           </div>
-          
-          <h2 className="text-5xl md:text-7xl font-display font-bold text-gray-900 mb-8 leading-[1.1] tracking-tight">
-            Impact in <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-glassbox-blue via-blue-600 to-glassbox-purple italic font-light">
-              Motion
-            </span>
-          </h2>
-          <p className="text-2xl text-gray-500 font-light leading-relaxed">
+          <p className="text-base text-gray-500 max-w-xs leading-relaxed">
             {t('results.description')}
           </p>
-        </motion.div>
-        
-        {/* Bento Grid Gallery */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[200px]">
-          {galleryImages.map((image: any, index: number) => {
-            let gridClass = "md:col-span-1 md:row-span-1";
-            if (image.size === 'large') gridClass = "md:col-span-2 md:row-span-2";
-            if (image.size === 'wide') gridClass = "md:col-span-2 md:row-span-1";
-            if (image.size === 'tall') gridClass = "md:col-span-1 md:row-span-2";
+        </div>
+
+        {/* Bento grid */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-3 auto-rows-[200px]">
+          {galleryImages.map((image, index) => {
+            let gridClass = 'md:col-span-1 md:row-span-1';
+            if (image.size === 'large') gridClass = 'md:col-span-2 md:row-span-2';
+            if (image.size === 'wide') gridClass = 'md:col-span-2 md:row-span-1';
+            if (image.size === 'tall') gridClass = 'md:col-span-1 md:row-span-2';
 
             return (
-              <motion.div 
-                key={index} 
-                className={`${gridClass} relative group cursor-pointer overflow-hidden rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-700 bg-gray-100 border border-gray-100`}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
+              <motion.div
+                key={index}
+                className={`${gridClass} relative group cursor-pointer overflow-hidden rounded-xl bg-gray-200`}
+                initial={{ opacity: 0, scale: 0.97 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.04 }}
                 onClick={() => setSelectedImage(image)}
               >
-                {/* Image */}
-                <motion.img
+                <img
                   src={`/images/${image.src}`}
                   alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06] grayscale group-hover:grayscale-0"
                 />
-                
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                  <motion.span 
-                    initial={{ y: 10, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    className="text-glassbox-blue text-[10px] font-bold uppercase tracking-[0.3em] mb-2"
-                  >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-end p-5">
+                  <span className="text-glassbox-blue text-[10px] font-bold uppercase tracking-[0.3em] mb-1">
                     {image.tag}
-                  </motion.span>
-                  <motion.h3 
-                    initial={{ y: 10, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.1 }}
-                    className="text-white text-xl font-display font-bold"
-                  >
-                    {image.alt}
-                  </motion.h3>
-                  
-                  <motion.div 
-                    className="absolute top-8 right-8 w-12 h-12 rounded-full glass flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 scale-0 group-hover:scale-100"
-                  >
-                    <MagnifyingGlassIcon className="h-5 w-5 text-white" />
-                  </motion.div>
+                  </span>
+                  <p className="text-white text-base font-bold">{image.alt}</p>
+                </div>
+                <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <MagnifyingGlassIcon className="h-4 w-4 text-white" />
                 </div>
               </motion.div>
             );
           })}
         </div>
-        
-        {/* Footer Link */}
-        <motion.div 
-          className="mt-20 flex justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-        >
-          <motion.a 
-            href="#contact"
-            className="group flex items-center space-x-4 text-gray-900 font-bold uppercase text-xs tracking-[0.3em] hover:text-glassbox-blue transition-colors"
+
+        {/* Footer link */}
+        <div className="mt-12 flex justify-center">
+          <a
+            href="/#contact"
+            className="inline-flex items-center gap-3 text-gray-900 font-bold uppercase text-xs tracking-[0.25em] hover:text-glassbox-blue transition-colors group"
           >
-            <span>Launch Your Story</span>
-            <div className="w-12 h-12 rounded-full bg-slate-900 flex items-center justify-center group-hover:bg-glassbox-blue group-hover:translate-x-2 transition-all duration-500">
-              <span className="text-white text-lg">→</span>
-            </div>
-          </motion.a>
-        </motion.div>
+            <span>Tampilkan Kampanye Anda</span>
+            <span className="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-white group-hover:bg-glassbox-blue group-hover:translate-x-1 transition-all duration-300">
+              →
+            </span>
+          </a>
+        </div>
       </div>
 
-      {/* Lightbox Modal */}
+      {/* Lightbox */}
       <AnimatePresence>
         {selectedImage && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-20 bg-black/95 backdrop-blur-sm"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-16 bg-black/95 backdrop-blur-sm"
             onClick={() => setSelectedImage(null)}
           >
-            <motion.button 
-              className="absolute top-10 right-10 text-white hover:text-glassbox-blue transition-colors z-[110]"
-              whileHover={{ rotate: 90 }}
+            <button
+              className="absolute top-6 right-6 text-white/60 hover:text-white transition-colors z-10"
+              onClick={() => setSelectedImage(null)}
             >
-              <XMarkIcon className="w-10 h-10" />
-            </motion.button>
-
-            <motion.div 
-              initial={{ scale: 0.9, opacity: 0 }}
+              <XMarkIcon className="w-8 h-8" />
+            </button>
+            <motion.div
+              initial={{ scale: 0.92, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="relative max-w-5xl w-full h-full flex flex-col items-center justify-center"
+              exit={{ scale: 0.92, opacity: 0 }}
+              className="max-w-4xl w-full"
               onClick={(e) => e.stopPropagation()}
             >
-              <img 
-                src={`/images/${selectedImage.src}`} 
+              <img
+                src={`/images/${selectedImage.src}`}
                 alt={selectedImage.alt}
-                className="max-w-full max-h-[80vh] object-contain rounded-3xl shadow-2xl border border-white/10"
+                className="w-full h-auto max-h-[80vh] object-contain rounded-xl"
               />
-              <div className="mt-8 text-center">
-                <span className="text-glassbox-blue text-xs font-bold uppercase tracking-[0.4em] block mb-2">{selectedImage.tag}</span>
-                <h3 className="text-white text-3xl font-display font-bold">{selectedImage.alt}</h3>
+              <div className="mt-4 text-center">
+                <span className="text-glassbox-blue text-xs font-bold uppercase tracking-widest">
+                  {selectedImage.tag}
+                </span>
+                <p className="text-white text-xl font-bold mt-1">{selectedImage.alt}</p>
               </div>
             </motion.div>
           </motion.div>

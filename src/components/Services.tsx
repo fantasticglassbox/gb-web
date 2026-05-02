@@ -15,7 +15,7 @@ const Services: React.FC = () => {
       image: '/images/digital-signage.webp',
       title: t('services.mediaPlacement'),
       description: t('services.mediaPlacementDescription'),
-      accent: 'from-cyan-400/90 to-glassbox-blue',
+      number: '01',
     },
     {
       key: 'oohTransit',
@@ -23,7 +23,7 @@ const Services: React.FC = () => {
       image: '/images/smart-tv.webp',
       title: t('services.oohTransit'),
       description: t('services.oohTransitDescription'),
-      accent: 'from-glassbox-blue to-glassbox-purple',
+      number: '02',
     },
     {
       key: 'offlineEvent',
@@ -31,96 +31,75 @@ const Services: React.FC = () => {
       image: '/images/tablets.webp',
       title: t('services.offlineEvent'),
       description: t('services.offlineEventDescription'),
-      accent: 'from-glassbox-purple to-fuchsia-500/90',
+      number: '03',
     },
   ];
 
   return (
-    <section id="services" className="relative overflow-x-hidden bg-[#05060a] py-20 md:py-28 lg:py-32">
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-32 right-[-15%] h-[420px] w-[420px] rounded-full bg-glassbox-blue/25 blur-[100px] md:h-[520px] md:w-[520px]" />
-        <div className="absolute bottom-0 left-[-20%] h-[380px] w-[380px] rounded-full bg-glassbox-purple/20 blur-[100px] md:h-[480px] md:w-[480px]" />
-        <div
-          className="absolute inset-0 opacity-[0.35]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)`,
-            backgroundSize: '48px 48px',
-            maskImage: 'linear-gradient(to bottom, black 0%, black 40%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 40%, transparent 100%)',
-          }}
-        />
-      </div>
+    <section id="services" className="bg-[#0C0D10] py-24 md:py-32 lg:py-40">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div className="relative z-10 mx-auto max-w-7xl min-w-0 px-4 sm:px-6 lg:px-8">
-        <motion.div
-          className="mb-14 max-w-3xl md:mb-16 lg:mb-20"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <span className="mb-5 inline-flex items-center rounded-full border border-white/10 bg-white/[0.06] px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.28em] text-white/60 backdrop-blur-sm">
-            {t('services.sectionEyebrow')}
-          </span>
-          <h2 className="font-sans text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            <span className="block sm:inline">{t('services.headlineStart')}</span>{' '}
-            <span className="bg-gradient-to-r from-glassbox-blue via-sky-400 to-glassbox-purple bg-clip-text text-transparent">
-              {t('services.headlineEnd')}
+        {/* Section header */}
+        <div className="mb-14 md:mb-16">
+          <div className="inline-flex items-center gap-2 mb-5">
+            <span className="w-6 h-px bg-glassbox-blue" />
+            <span className="text-glassbox-blue text-xs font-bold uppercase tracking-[0.25em]">
+              {t('services.sectionEyebrow')}
             </span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] tracking-tight max-w-xl">
+            {t('services.headlineStart')}{' '}
+            <span className="text-glassbox-blue">{t('services.headlineEnd')}</span>
           </h2>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-white/50 md:text-lg">
+          <p className="mt-4 text-white/40 text-base max-w-lg leading-relaxed">
             {t('services.description')}
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-8">
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
           {services.map((service, index) => (
             <motion.div
               key={service.key}
-              id={service.slug}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.55, delay: index * 0.08 }}
-              className="group min-w-0"
+              transition={{ duration: 0.5, delay: index * 0.08 }}
             >
               <Link
                 href={`/services/${service.slug}`}
-                className="block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-glassbox-blue/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05060a] rounded-[1.35rem]"
+                className="group block h-full rounded-2xl border border-white/8 bg-white/[0.03] overflow-hidden hover:border-glassbox-blue/30 hover:bg-white/[0.05] transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-glassbox-blue/60"
               >
-                <article className="relative flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-white/[0.08] bg-white/[0.03] shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset] transition-all duration-500 hover:border-glassbox-blue/35 hover:bg-white/[0.05] hover:shadow-[0_28px_80px_-24px_rgba(11,166,223,0.45)] md:rounded-3xl">
-                  <div className="relative aspect-[16/10] w-full overflow-hidden md:aspect-[5/3]">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.06]"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#05060a] via-[#05060a]/40 to-transparent md:via-[#05060a]/20" />
-                    <div
-                      className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r opacity-90 transition duration-500 group-hover:opacity-100 ${service.accent}`}
-                    />
-                    <span className="absolute left-4 top-4 font-mono text-[11px] font-medium tabular-nums text-white/40">
-                      {String(index + 1).padStart(2, '0')}
+                {/* Image */}
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0C0D10] via-transparent to-transparent" />
+                  <span className="absolute top-4 left-4 font-mono text-[11px] text-white/30">
+                    {service.number}
+                  </span>
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-glassbox-blue transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-white/45 leading-relaxed mb-6">
+                    {service.description}
+                  </p>
+                  <div className="flex items-center justify-between border-t border-white/8 pt-4">
+                    <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-glassbox-blue">
+                      {t('services.exploreService')}
+                    </span>
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-white/40 group-hover:border-glassbox-blue/40 group-hover:text-glassbox-blue transition-all duration-300">
+                      <ArrowUpRightIcon className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                     </span>
                   </div>
-                  <div className="flex flex-1 flex-col p-6 md:p-7">
-                    <h3 className="font-sans text-xl font-bold leading-snug tracking-tight text-white transition duration-300 group-hover:text-white md:text-2xl">
-                      {service.title}
-                    </h3>
-                    <p className="mt-3 flex-1 text-sm leading-relaxed text-white/50 md:text-[15px]">
-                      {service.description}
-                    </p>
-                    <div className="mt-6 flex items-center justify-between border-t border-white/[0.06] pt-5">
-                      <span className="text-xs font-bold uppercase tracking-[0.2em] text-glassbox-blue">
-                        {t('services.exploreService')}
-                      </span>
-                      <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition duration-300 group-hover:border-glassbox-blue/50 group-hover:bg-glassbox-blue/15 group-hover:text-glassbox-blue">
-                        <ArrowUpRightIcon className="h-5 w-5 transition duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden />
-                      </span>
-                    </div>
-                  </div>
-                </article>
+                </div>
               </Link>
             </motion.div>
           ))}

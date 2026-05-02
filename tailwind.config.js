@@ -6,39 +6,27 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-        },
         glassbox: {
           blue: '#0BA6DF',
-          dark: '#1e3a8a',
+          amber: '#F59E0B',
+          dark: '#0C0D10',
           light: '#3b82f6',
-          purple: '#7c3aed',
-        }
+        },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-playfair)', 'serif'],
+        display: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.8s ease-out',
         'fade-in': 'fadeIn 1s ease-out',
         'slide-in-right': 'slideInRight 0.8s ease-out',
-        'float': 'float 6s ease-in-out infinite',
+        'marquee': 'marquee 35s linear infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         fadeInUp: {
-          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '0%': { opacity: '0', transform: 'translateY(24px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         fadeIn: {
@@ -49,17 +37,17 @@ module.exports = {
           '0%': { opacity: '0', transform: 'translateX(30px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
       backdropBlur: {
         xs: '2px',
       },
       boxShadow: {
-        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
-        'glass-lg': '0 20px 60px 0 rgba(31, 38, 135, 0.5)',
+        'card': '0 1px 3px rgba(0,0,0,0.08), 0 8px 24px rgba(0,0,0,0.06)',
+        'card-hover': '0 4px 12px rgba(0,0,0,0.12), 0 24px 48px rgba(0,0,0,0.08)',
         'elegant': '0 10px 40px rgba(0, 0, 0, 0.1)',
         'elegant-lg': '0 20px 60px rgba(0, 0, 0, 0.15)',
       },
