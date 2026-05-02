@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "30721b9debf11bf0e6fb7fe87e4dbbcc",
-    "previewModeSigningKey": "62de04985d84b1a6d88905aa249d6b01223d539da8b548163238a4cf2d36f387",
-    "previewModeEncryptionKey": "51745e42b841bef3bc95c766371c430cd264d6c8162540102fea0ad6f990b012"
-  }
-}
+{"version":4,"routes":{"/careers/sales-business-development":{}},"dynamicRoutes":{"/careers/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/careers/[slug]","routeRegex":"^\\/careers\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"1146d4f325bc70676d144ddba705754a","previewModeSigningKey":"6da13cb47476df93ed79f7b94dfedfb53314e4cdd14d8c727c4997acbba76858","previewModeEncryptionKey":"93290a9e27e435c76cd5724ebc406805dcaaf0fb2917b61864a7346412f4d8ee"}}
