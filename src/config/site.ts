@@ -1,4 +1,2 @@
-/** Canonical site URL for SEO (sitemap, Open Graph, JSON-LD). Override with REACT_APP_SITE_URL at build time. */
-export const SITE_URL =
-  (typeof process !== 'undefined' && process.env.REACT_APP_SITE_URL) ||
-  'https://glassbox.id';
+/** Canonical site URL for SEO (sitemap, Open Graph, JSON-LD). Override with NEXT_PUBLIC_SITE_URL at build time. */
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://glassbox.id';

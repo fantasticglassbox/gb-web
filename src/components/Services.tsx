@@ -1,6 +1,7 @@
+'use client';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 
@@ -36,7 +37,6 @@ const Services: React.FC = () => {
 
   return (
     <section id="services" className="relative overflow-x-hidden bg-[#05060a] py-20 md:py-28 lg:py-32">
-      {/* Background: contained glows + subtle grid */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -top-32 right-[-15%] h-[420px] w-[420px] rounded-full bg-glassbox-blue/25 blur-[100px] md:h-[520px] md:w-[520px]" />
         <div className="absolute bottom-0 left-[-20%] h-[380px] w-[380px] rounded-full bg-glassbox-purple/20 blur-[100px] md:h-[480px] md:w-[480px]" />
@@ -85,9 +85,11 @@ const Services: React.FC = () => {
               transition={{ duration: 0.55, delay: index * 0.08 }}
               className="group min-w-0"
             >
-              <Link to={`/services/${service.slug}`} className="block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-glassbox-blue/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05060a] rounded-[1.35rem]">
+              <Link
+                href={`/services/${service.slug}`}
+                className="block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-glassbox-blue/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#05060a] rounded-[1.35rem]"
+              >
                 <article className="relative flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-white/[0.08] bg-white/[0.03] shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset] transition-all duration-500 hover:border-glassbox-blue/35 hover:bg-white/[0.05] hover:shadow-[0_28px_80px_-24px_rgba(11,166,223,0.45)] md:rounded-3xl">
-                  {/* Image hero */}
                   <div className="relative aspect-[16/10] w-full overflow-hidden md:aspect-[5/3]">
                     <img
                       src={service.image}
@@ -102,7 +104,6 @@ const Services: React.FC = () => {
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
-
                   <div className="flex flex-1 flex-col p-6 md:p-7">
                     <h3 className="font-sans text-xl font-bold leading-snug tracking-tight text-white transition duration-300 group-hover:text-white md:text-2xl">
                       {service.title}
