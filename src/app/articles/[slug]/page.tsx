@@ -21,6 +21,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const coverUrl = getArticleCoverAbsoluteUrl(slug);
   const title = `${item.title} | Glassbox`;
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: item.title,
+    datePublished: item.date,
+    dateModified: item.date,
+    description: item.excerpt,
+    image: coverUrl,
+    author: { '@type': 'Organization', name: 'Glassbox', url: SITE_URL },
+    publisher: { '@type': 'Organization', name: 'Glassbox', url: SITE_URL },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  };
+
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Wawasan', item: `${SITE_URL}/articles` },
+      { '@type': 'ListItem', position: 3, name: item.title },
+    ],
+  };
+
   return {
     title,
     description: item.excerpt,
@@ -30,22 +53,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description: item.excerpt,
       url: canonical,
-      images: [{ url: coverUrl }],
+      images: [{ url: coverUrl, width: 1200, height: 630 }],
       publishedTime: item.date,
+      modifiedTime: item.date,
     },
-    other: {
-      'script:ld+json': JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Article',
-        headline: item.title,
-        datePublished: item.date,
-        description: item.excerpt,
-        image: coverUrl,
-        author: { '@type': 'Organization', name: 'Glassbox', url: SITE_URL },
-        publisher: { '@type': 'Organization', name: 'Glassbox', url: SITE_URL },
-        mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
-      }),
-    },
+    other: { 'script:ld+json': JSON.stringify([articleSchema, breadcrumb]) },
   };
 }
 

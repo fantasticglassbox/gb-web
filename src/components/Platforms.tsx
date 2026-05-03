@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 const Platforms: React.FC = () => {
   const { t } = useTranslation();
@@ -75,11 +76,13 @@ const Platforms: React.FC = () => {
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${platform.gradient} opacity-20 group-hover:opacity-40 transition-opacity duration-300`}></div>
-                  <img
+                  <div className={`absolute inset-0 bg-gradient-to-br ${platform.gradient} opacity-20 group-hover:opacity-40 transition-opacity duration-300 z-10`} />
+                  <Image
                     src={`/images/${platform.image}`}
                     alt={platform.title}
-                    className="w-full h-full object-cover relative z-10"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    className="object-cover"
                   />
                 </motion.div>
                 <div className="p-6 flex-grow flex flex-col">

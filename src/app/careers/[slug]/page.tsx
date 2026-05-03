@@ -20,12 +20,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = `${vacancy.title} | Glassbox`;
 
   const career = careersId as any;
-  const schema = buildGlassboxJobPostingSchema({
+  const jobSchema = buildGlassboxJobPostingSchema({
     vacancy,
     career,
     hiringOrganization: { name: 'Glassbox', sameAs: SITE_URL, logo: `${SITE_URL}/logo.png` },
     jobPageUrl: canonical,
   });
+
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Karir', item: `${SITE_URL}/careers` },
+      { '@type': 'ListItem', position: 3, name: vacancy.title },
+    ],
+  };
 
   return {
     title,
@@ -37,9 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: canonical,
       images: [{ url: `${SITE_URL}/logo.png` }],
     },
-    other: {
-      'script:ld+json': JSON.stringify(schema),
-    },
+    other: { 'script:ld+json': JSON.stringify([jobSchema, breadcrumb]) },
   };
 }
 

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
@@ -79,9 +80,11 @@ const Header: React.FC = () => {
 
           {/* Logo */}
           <Link href="/">
-            <img
+            <Image
               src="/logo.png"
               alt="Glassbox"
+              width={120}
+              height={32}
               className={`h-8 w-auto transition-all duration-300 ${onHero ? 'brightness-0 invert' : 'brightness-100'}`}
             />
           </Link>

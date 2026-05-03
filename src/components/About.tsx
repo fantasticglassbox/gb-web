@@ -2,6 +2,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const VENUE_ICONS: Record<string, string> = {
   hotel: '🏨',
@@ -51,10 +52,12 @@ const About: React.FC = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
-              <img
+              <Image
                 src="/images/GHN03420-scaled.webp"
-                alt="Glassbox Advertising Network"
-                className="w-full h-full object-cover"
+                alt="Jaringan periklanan digital Glassbox di Jakarta"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6">
@@ -67,9 +70,11 @@ const About: React.FC = () => {
 
             {/* Secondary image */}
             <div className="hidden md:block absolute -bottom-8 -right-6 w-2/5 rounded-xl overflow-hidden border-4 border-white shadow-card-hover">
-              <img
+              <Image
                 src="/images/digital-signage.webp"
-                alt="Digital Signage"
+                alt="Digital signage display"
+                width={320}
+                height={400}
                 className="w-full h-auto object-cover"
               />
             </div>

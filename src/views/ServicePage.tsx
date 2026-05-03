@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ArrowLeftIcon, EnvelopeIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
@@ -23,26 +24,56 @@ const ServicePage: React.FC<Props> = ({ slug }) => {
     'media-placement': {
       title: t('services.mediaPlacement'),
       description: t('services.mediaPlacementDescription'),
-      fullContent:
-        "Maximize your brand's reach with strategic ad placements across our extensive network of digital signage and high-traffic public areas. We provide data-driven insights to ensure your message hits the right audience at the right time.",
+      paragraphs: [
+        'Penempatan media digital Glassbox menjangkau audiens berkualitas tinggi melalui jaringan layar digital yang tersebar di lebih dari 50 lokasi strategis di Jakarta dan sekitarnya — mulai dari koridor mal, lobby hotel bintang lima, area kampus universitas, hingga lounge premium.',
+        'Setiap layar dalam jaringan DOOH (Digital Out-of-Home) Glassbox beroperasi di titik-titik dengan lalu lintas tinggi yang terverifikasi: Sudirman, Thamrin, Kuningan, dan koridor bisnis utama Jakarta. Merek Anda tampil tepat di hadapan audiens yang relevan — eksekutif, mahasiswa, wisatawan domestik, dan konsumen aktif.',
+        'Kami menyediakan laporan proof-of-play terperinci sehingga klien dapat mengukur eksposur kampanye secara real-time. Konten iklan dapat diperbarui kapan saja tanpa biaya produksi ulang, memungkinkan respons cepat terhadap perubahan pasar atau promosi musiman.',
+      ],
       image: '/images/digital-signage.webp',
-      features: ['Strategic Network', 'Data-Driven Insights', 'High-Traffic Reach', 'Dynamic Content'],
+      features: [
+        'Jaringan 50+ Lokasi Jakarta',
+        'Laporan Proof-of-Play',
+        'Update Konten Real-Time',
+        'Targeting Audiens Terverifikasi',
+        'Format Digital Signage & Smart TV',
+        'Penempatan Premium Hotel & Mall',
+      ],
     },
     'ooh-transit': {
       title: t('services.oohTransit'),
       description: t('services.oohTransitDescription'),
-      fullContent:
-        'Capture the attention of commuters and travelers with high-impact Out-of-Home transit advertising. From Transjakarta routes to major transport hubs, your brand moves with your audience.',
+      paragraphs: [
+        'Media transit OOH Glassbox menempatkan pesan merek Anda di jalur perjalanan harian jutaan komuter Jakarta — di dalam armada Transjakarta, halte bus strategis, dan area transportasi publik berdensitas tinggi. Iklan transit menjangkau audiens yang sama secara berulang setiap hari kerja, membangun ingatan merek yang kuat.',
+        'Jaringan transit Glassbox mencakup koridor Transjakarta utama termasuk Blok M–Kota, Harmoni–Kalideres, dan rute-rute menuju pusat bisnis Jakarta Pusat dan Jakarta Selatan. Dengan frekuensi paparan rata-rata 20–30 kali per bulan per komuter, OOH transit adalah salah satu format periklanan luar ruang paling efisien untuk awareness merek jangka menengah.',
+        'Format layar digital di armada dan halte memungkinkan penjadwalan konten berdasarkan waktu — iklan produk kopi pagi hari, promosi restoran sore hari, atau kampanye hiburan di akhir pekan. Fleksibilitas ini memberi merek kontrol penuh atas konteks pesan mereka.',
+      ],
       image: '/images/smart-tv.webp',
-      features: ['Commuter Targeting', 'High Frequency', 'Broad Visibility', 'Route-Specific Ads'],
+      features: [
+        'Jaringan Transjakarta & Halte Bus',
+        'Frekuensi Paparan Tinggi Harian',
+        'Penjadwalan Konten Berbasis Waktu',
+        'Jangkauan Koridor Bisnis Jakarta',
+        'Format Layar Digital Transit',
+        'Audiens Komuter Terverifikasi',
+      ],
     },
     'offline-event': {
       title: t('services.offlineEvent'),
       description: t('services.offlineEventDescription'),
-      fullContent:
-        'Create unforgettable brand experiences with our offline event activations. We blend physical engagement with digital technology to create meaningful connections between your brand and its customers.',
+      paragraphs: [
+        'Aktivasi merek offline Glassbox menghadirkan pengalaman langsung yang menghubungkan konsumen dengan identitas merek Anda di lokasi dengan lalu lintas tinggi — mal, kampus universitas, hotel, dan venue premium Jakarta. Brand activation yang efektif mengubah perhatian menjadi keterlibatan nyata dan konversi terukur.',
+        'Kami mengintegrasikan teknologi digital dengan elemen fisik: tablet interaktif untuk engagement langsung, layar digital untuk display produk, dan sistem pengumpulan data yang memungkinkan tindak lanjut kampanye. Setiap aktivasi dirancang bersama tim kreatif Glassbox untuk menyesuaikan dengan karakter merek dan target audiens spesifik.',
+        'Dari roadshow universitas yang menjangkau mahasiswa urban, hingga aktivasi hotel yang menargetkan tamu bisnis kelas atas, Glassbox mengelola seluruh proses dari perencanaan venue, perizinan, setup teknologi, hingga pelaporan hasil. Layanan end-to-end ini memastikan kampanye berjalan mulus dan konsisten di setiap titik aktivasi.',
+      ],
       image: '/images/tablets.webp',
-      features: ['Interactive Displays', 'Brand Activation', 'Experiential Marketing', 'Lead Generation'],
+      features: [
+        'Brand Activation Mall & Kampus',
+        'Teknologi Tablet Interaktif',
+        'Pengumpulan Data Prospek',
+        'Event Management End-to-End',
+        'Integrasi Digital + Fisik',
+        'Laporan Engagement Terperinci',
+      ],
     },
   };
 
@@ -101,8 +132,10 @@ const ServicePage: React.FC<Props> = ({ slug }) => {
 
                 <p className="text-xl text-gray-500 mb-8 leading-relaxed">{service.description}</p>
 
-                <div className="border-l-2 border-glassbox-blue/30 pl-6 mb-10">
-                  <p className="text-gray-600 leading-relaxed">{service.fullContent}</p>
+                <div className="border-l-2 border-glassbox-blue/30 pl-6 mb-10 space-y-4">
+                  {(service.paragraphs ?? [service.fullContent]).map((p: string, i: number) => (
+                    <p key={i} className="text-gray-600 leading-relaxed">{p}</p>
+                  ))}
                 </div>
 
                 {/* Features */}
@@ -147,12 +180,14 @@ const ServicePage: React.FC<Props> = ({ slug }) => {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.1 }}
-                    className="rounded-2xl overflow-hidden border-4 border-white shadow-card-hover"
+                    className="relative rounded-2xl overflow-hidden border-4 border-white shadow-card-hover aspect-[4/5]"
                   >
-                    <img
+                    <Image
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-auto object-cover aspect-[4/5]"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 40vw"
+                      className="object-cover"
                     />
                   </motion.div>
                 </div>

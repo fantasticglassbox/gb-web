@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
@@ -71,10 +72,12 @@ const Articles: React.FC = () => {
                     >
                       {/* Cover */}
                       <div className="relative md:w-[36%] shrink-0 aspect-[16/9] md:aspect-auto md:min-h-[200px] overflow-hidden bg-gray-100">
-                        <img
+                        <Image
                           src={coverSrc}
                           alt={title}
-                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                          fill
+                          sizes="(max-width: 768px) 100vw, 40vw"
+                          className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
                         />
                       </div>
                       {/* Text */}

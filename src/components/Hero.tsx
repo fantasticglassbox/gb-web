@@ -2,6 +2,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const INQUIRY_MAILTO =
   'mailto:info@glassbox.id?subject=Inquiry: Glassbox Advertising Campaign&body=Hello Glassbox Team,%0D%0A%0D%0AI am interested in launching an advertising campaign with your network. %0D%0A%0D%0AMy Brand: %0D%0AProject Type: %0D%0ATarget Locations: %0D%0A%0D%0APlease provide more details on your media kit and pricing.%0D%0A%0D%0ABest regards,';
@@ -120,10 +121,13 @@ const Hero: React.FC = () => {
             <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-glassbox-blue/40 rounded-bl-3xl pointer-events-none" />
 
             <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-[#111318]">
-              <img
+              <Image
                 src="/images/GHN03420-scaled.webp"
                 alt="Glassbox Digital Advertising"
-                className="w-full h-full object-cover opacity-90"
+                fill
+                priority
+                sizes="(max-width: 1024px) 0vw, 50vw"
+                className="object-cover opacity-90"
               />
               {/* Subtle gradient on image */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#0C0D10]/60 via-transparent to-transparent" />

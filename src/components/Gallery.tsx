@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 const galleryImages = [
   { src: '4-glassbox-scaled-e1735020462672.webp', alt: 'Premium Placement', tag: 'Retail', size: 'large' },
@@ -61,10 +62,12 @@ const Gallery: React.FC = () => {
                 transition={{ duration: 0.5, delay: index * 0.04 }}
                 onClick={() => setSelectedImage(image)}
               >
-                <img
+                <Image
                   src={`/images/${image.src}`}
                   alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.06] grayscale group-hover:grayscale-0"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.06] grayscale group-hover:grayscale-0"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col justify-end p-5">
                   <span className="text-glassbox-blue text-[10px] font-bold uppercase tracking-[0.3em] mb-1">

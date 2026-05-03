@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
@@ -77,13 +78,13 @@ const ArticleDetail: React.FC<Props> = ({ slug }) => {
             </time>
 
             {/* Cover */}
-            <figure className="mb-8 rounded-2xl overflow-hidden bg-gray-100 aspect-[16/9]">
-              <img
+            <figure className="relative mb-8 rounded-2xl overflow-hidden bg-gray-100 aspect-[16/9]">
+              <Image
                 src={article.coverSrc}
                 alt={article.title}
-                className="w-full h-full object-cover"
-                width={1200}
-                height={630}
+                fill
+                sizes="(max-width: 1024px) 100vw, 768px"
+                className="object-cover"
               />
             </figure>
 
