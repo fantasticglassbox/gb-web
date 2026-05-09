@@ -1,11 +1,11 @@
 {
-  "/sitemap.xml/route": "/sitemap.xml",
   "/_not-found/page": "/_not-found",
+  "/sitemap.xml/route": "/sitemap.xml",
   "/careers/page": "/careers",
   "/articles/page": "/articles",
   "/privacy-policy/page": "/privacy-policy",
   "/careers/[slug]/page": "/careers/[slug]",
-  "/services/[slug]/page": "/services/[slug]",
   "/articles/[slug]/page": "/articles/[slug]",
-  "/page": "/"
+  "/page": "/",
+  "/services/[slug]/page": "/services/[slug]"
 }

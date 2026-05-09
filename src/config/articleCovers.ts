@@ -19,6 +19,14 @@ const ARTICLE_COVERS: Record<string, string> = {
   'digital-signage-high-traffic-retail': '/images/articles/digital-signage-high-traffic-retail.jpg',
   'ooh-transit-brand-visibility-indonesia': '/images/articles/ooh-transit-brand-visibility-indonesia.jpg',
   'experiential-activation-offline-events': '/images/articles/experiential-activation-offline-events.jpg',
+  'harga-iklan-digital-signage-mall-jakarta': '/images/articles/harga-iklan-digital-signage-mall-jakarta.jpg',
+  'memilih-lokasi-dooh-terbaik-jakarta': '/images/articles/memilih-lokasi-dooh-terbaik-jakarta.jpg',
+  'roi-iklan-digital-outdoor-indonesia': '/images/articles/roi-iklan-digital-outdoor-indonesia.jpg',
+  'videotron-vs-billboard-digital-signage': '/images/articles/videotron-vs-billboard-digital-signage.jpg',
+  'iklan-hotel-lobby-digital-signage-jakarta': '/images/articles/iklan-hotel-lobby-digital-signage-jakarta.jpg',
+  'iklan-kampus-universitas-jakarta': '/images/articles/iklan-kampus-universitas-jakarta.jpg',
+  'strategi-iklan-ramadan-harbolnas-dooh': '/images/articles/strategi-iklan-ramadan-harbolnas-dooh.jpg',
+  'ooh-omnichannel-integrasi-digital-offline': '/images/articles/ooh-omnichannel-integrasi-digital-offline.jpg',
 };
 
 const DEFAULT_COVER = '/images/articles/digital-signage-high-traffic-retail.jpg';
