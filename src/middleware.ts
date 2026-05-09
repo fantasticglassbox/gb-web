@@ -28,9 +28,8 @@ const VALID_ARTICLE_SLUGS = new Set([
   'ooh-omnichannel-integrasi-digital-offline',
 ]);
 
-// Filled vacancies that are permanently gone should be added here so
-// Google removes them from the index. Active vacancies should NOT be listed here.
-const GONE_CAREER_SLUGS = new Set<string>([]);
+// Add active vacancy slugs here. Unknown slugs return 410.
+const VALID_CAREER_SLUGS = new Set(['sales-business-development']);
 
 // Top-level paths that are valid pages (exact match).
 const VALID_TOP_LEVEL = new Set(['/', '/articles', '/careers', '/privacy-policy']);
@@ -85,9 +84,8 @@ export function middleware(request: NextRequest) {
 
   // /careers/[slug]
   if (parts[0] === 'careers' && parts.length === 2) {
-    if (GONE_CAREER_SLUGS.has(parts[1])) return gone();
-    // Unknown but potentially active vacancy — let Next.js handle as 404.
-    return;
+    if (VALID_CAREER_SLUGS.has(parts[1])) return;
+    return gone();
   }
 
   // Everything else (random paths, .php files, old WordPress URLs, etc.) → 410.
